@@ -1,0 +1,142 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=1 E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example
+info: INFO: Symbol OV7670_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:3
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:3
+info: INFO: Symbol OV7725_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:10
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:10
+info: INFO: Symbol NT99141_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:17
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:17
+info: INFO: Symbol OV2640_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:24
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:24
+info: INFO: Symbol OV3660_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:31
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:31
+info: INFO: Symbol OV5640_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:38
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:38
+info: INFO: Symbol GC2145_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:45
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:45
+info: INFO: Symbol GC032A_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:52
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:52
+info: INFO: Symbol GC0308_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:59
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:59
+info: INFO: Symbol BF3005_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:66
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:66
+info: INFO: Symbol BF20A6_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:73
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:73
+info: INFO: Symbol SC101IOT_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:80
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:80
+info: INFO: Symbol SC101IOT_720P_15FPS_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:95
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:95
+info: INFO: Symbol SC101IOT_VGA_25FPS_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:99
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:99
+info: INFO: Symbol SC030IOT_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:105
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:105
+info: INFO: Symbol SC031GS_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:112
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:112
+info: INFO: Symbol HM1055_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:120
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:120
+info: INFO: Symbol HM0360_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:127
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:127
+info: INFO: Symbol MEGA_CCM_SUPPORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:134
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:134
+info: INFO: Symbol SCCB_HARDWARE_I2C_DRIVER_LEGACY defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:148
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:148
+info: INFO: Symbol SCCB_HARDWARE_I2C_DRIVER_NEW defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:150
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:150
+info: INFO: Symbol SCCB_HARDWARE_I2C_PORT0 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:159
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:159
+info: INFO: Symbol SCCB_HARDWARE_I2C_PORT1 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:161
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:161
+info: INFO: Symbol SCCB_CLK_FREQ defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:166
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:166
+info: INFO: Symbol GC_SENSOR_WINDOWING_MODE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:182
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:182
+info: INFO: Symbol GC_SENSOR_SUBSAMPLE_MODE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:184
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:184
+info: INFO: Symbol CAMERA_TASK_STACK_SIZE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:188
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:188
+info: INFO: Symbol CAMERA_CORE0 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:200
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:200
+info: INFO: Symbol CAMERA_CORE1 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:202
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:202
+info: INFO: Symbol CAMERA_NO_AFFINITY defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:204
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:204
+info: INFO: Symbol CAMERA_DMA_BUFFER_SIZE_MAX defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:209
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:209
+info: INFO: Symbol CAMERA_PSRAM_DMA defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:217
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:217
+info: INFO: Symbol CAMERA_JPEG_MODE_FRAME_SIZE_AUTO defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:231
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:231
+info: INFO: Symbol CAMERA_JPEG_MODE_FRAME_SIZE_CUSTOM defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:237
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:237
+info: INFO: Symbol CAMERA_JPEG_MODE_FRAME_SIZE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:244
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:244
+info: INFO: Symbol CAMERA_CONVERTER_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:252
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:252
+info: INFO: Symbol LCD_CAM_CONV_BT601_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:266
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:266
+info: INFO: Symbol LCD_CAM_CONV_BT709_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:268
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:268
+info: INFO: Symbol LCD_CAM_CONV_FULL_RANGE_ENABLED defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:272
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:272
+info: INFO: Symbol LCD_CAM_ISR_IRAM_SAFE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:284
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:284
+info: INFO: Choice SC101_REGS_SELECT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:87
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:87
+info: INFO: Choice SCCB_HARDWARE_I2C_DRIVER_SELECTION defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:141
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:141
+info: INFO: Choice SCCB_HARDWARE_I2C_PORT defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:155
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:155
+info: INFO: Choice GC_SENSOR_WINDOW_MODE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:174
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:174
+info: INFO: Choice CAMERA_TASK_PINNED_TO_CORE defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:194
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:194
+info: INFO: Choice CAMERA_JPEG_MODE_FRAME_SIZE_OPTION defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:225
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:225
+info: INFO: Choice CAMERA_CONV_PROTOCOL defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\managed_components\espressif__esp32-camera\Kconfig:259
+    E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\camera_example\main\Kconfig.projbuild:259
