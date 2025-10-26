@@ -156,7 +156,7 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
             (uint32_t)(jpg_buf_len/1024),
             (uint32_t)frame_time, fps);
 
-        vTaskDelay(pdMS_TO_TICKS(100));
+        vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 
     last_frame = 0;
@@ -168,6 +168,9 @@ void startCameraServer() {
     config.server_port = 80;           // Cổng HTTP mặc định
     config.max_uri_handlers = 16;      // Tối đa số URI handlers
     config.stack_size = 8192;
+    config.recv_wait_timeout = 10;
+    config.send_wait_timeout = 10;
+    config.lru_purge_enable = true;
 
     httpd_handle_t server = NULL;
     esp_err_t err = httpd_start(&server, &config);
