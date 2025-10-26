@@ -1,0 +1,8 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=1 E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\drivers\mqtt_driver
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/msys64/ucrt64/bin/cc.exe
+-- Check for working C compiler: C:/msys64/ucrt64/bin/cc.exe - broken
+-- Configuring incomplete, errors occurred!

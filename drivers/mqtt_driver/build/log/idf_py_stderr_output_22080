@@ -1,0 +1,56 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=1 E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\drivers\mqtt_driver
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Error at C:/Users/ASUS/.espressif/tools/cmake/3.30.2/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "C:/msys64/ucrt64/bin/cc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/drivers/mqtt_driver/build/CMakeFiles/CMakeScratch/TryCompile-ndef60'
+    
+    Run Build Command(s): C:/Users/ASUS/.espressif/tools/ninja/1.12.1/ninja.exe -v cmTC_15bad
+    [1/2] C:\msys64\ucrt64\bin\cc.exe    -o CMakeFiles\cmTC_15bad.dir\testCCompiler.c.obj -c E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\drivers\mqtt_driver\build\CMakeFiles\CMakeScratch\TryCompile-ndef60\testCCompiler.c
+    FAILED: CMakeFiles/cmTC_15bad.dir/testCCompiler.c.obj 
+    C:\msys64\ucrt64\bin\cc.exe    -o CMakeFiles\cmTC_15bad.dir\testCCompiler.c.obj -c E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\drivers\mqtt_driver\build\CMakeFiles\CMakeScratch\TryCompile-ndef60\testCCompiler.c
+    ninja: build stopped: subcommand failed.
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.30)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
