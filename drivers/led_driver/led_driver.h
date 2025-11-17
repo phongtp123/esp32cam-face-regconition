@@ -1,4 +1,4 @@
-#define LED_STRIP_GPIO        8
+#define LED_STRIP_GPIO        26
 #define LED_STRIP_LENGTH      8
 
 #pragma once
@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 /**
- * @brief Khởi tạo LED WS2812
+ * @brief Khởi tạo LED
  */
 esp_err_t led_init(void);
 

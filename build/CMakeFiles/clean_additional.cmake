@@ -6,9 +6,6 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "bootloader\\bootloader.bin"
   "bootloader\\bootloader.elf"
   "bootloader\\bootloader.map"
-  "ca.crt.S"
-  "client.crt.S"
-  "client.key.S"
   "config\\sdkconfig.cmake"
   "config\\sdkconfig.h"
   "control_led.bin"
@@ -21,7 +18,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "flasher_args.json"
   "ldgen_libraries"
   "ldgen_libraries.in"
-  "project_elf_src_esp32c3.c"
+  "project_elf_src_esp32.c"
   "x509_crt_bundle.S"
   )
 endif()

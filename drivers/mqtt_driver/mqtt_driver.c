@@ -1,11 +1,19 @@
 #include "mqtt_client.h"
 #include "esp_log.h"
+
 #include "mqtt_driver.h"
 #include "led_driver.h"
+#include "motion_driver.h"
+#include "light_sensor_driver.h"
+
 #include "cJSON.h"
 
 static const char *TAG = "MQTT";
 static esp_mqtt_client_handle_t mqtt_client_handle = NULL;
+
+static bool motion_detect = false;
+static bool night_time = false;
+int attempt = 0;
 
 static void log_error_if_nonzero(const char * message, int error_code)
 {
@@ -14,19 +22,81 @@ static void log_error_if_nonzero(const char * message, int error_code)
     }
 }
 
-static void publish_led_status(int status)
+static void publish_motion_status(int status)
 {
     if (!mqtt_client_handle) return;
 
     cJSON *root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(root, "status", status);
+    cJSON_AddNumberToObject(root, "motion", status);
     char *json_str = cJSON_PrintUnformatted(root);
 
-    int msg_id = esp_mqtt_client_publish(mqtt_client_handle, "/led/status", json_str, 0, 1, 0);
-    ESP_LOGI(TAG, "Publish LED status (%d) msg_id=%d", status, msg_id);
+    int msg_id = esp_mqtt_client_publish(mqtt_client_handle, "/motion/status", json_str, 0, 0, 0);
+    ESP_LOGI(TAG, "Publish motion status (%d) msg_id=%d", status, msg_id);
 
     cJSON_Delete(root);
     free(json_str);
+}
+
+static void publish_lsensor_status(int status)
+{
+    if (!mqtt_client_handle) return;
+
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(root, "lsensor", status);
+    char *json_str = cJSON_PrintUnformatted(root);
+
+    int msg_id = esp_mqtt_client_publish(mqtt_client_handle, "/lsensor/status", json_str, 0, 0, 0);
+    ESP_LOGI(TAG, "Publish motion status (%d) msg_id=%d", status, msg_id);
+
+    cJSON_Delete(root);
+    free(json_str);
+}
+
+static void motion_task(void *pvParameters)
+{
+    while (1)
+    {
+        int value = motion_read();
+
+        if (!motion_detect) {
+            if (value == 1) {
+                motion_detect = true;
+                publish_motion_status(1);
+                ESP_LOGI(TAG, "Motion detected!");
+            }
+        } else {
+            if (value == 0) {
+                motion_detect = false;
+                publish_motion_status(0);
+                ESP_LOGI(TAG, "Motion stopped!");
+            }
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+
+static void light_sensor_task (void *pvParameters){
+    while(1) {
+        float sensor_value = bh1750_read_lux();
+        if (!night_time){
+            attempt++;
+            if (sensor_value < 3.0 && attempt >= 10){
+                night_time = true;
+                publish_lsensor_status(1);
+                ESP_LOGI(TAG, "Night time");
+            }
+        } else {
+            if (sensor_value >= 3.0){
+                night_time = false;
+                publish_lsensor_status(0);
+                ESP_LOGI(TAG, "Day time");
+            }
+            attempt = 0;
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
 }
 
 static void handle_led_message(const char *data, int len)
@@ -41,10 +111,8 @@ static void handle_led_message(const char *data, int len)
     if (cJSON_IsNumber(status)) {
         if (status->valueint == 1) {
             led_on();
-            publish_led_status(1);
         } else {
             led_off();
-            publish_led_status(0);
         }
     } else {
         ESP_LOGW(TAG, "Không tìm thấy trường 'status' hợp lệ");
@@ -108,24 +176,24 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
 esp_err_t mqtt_app_start(void)
 {
-    extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");
-    extern const uint8_t client_cert_pem_end[] asm("_binary_client_crt_end");
-    extern const uint8_t client_key_pem_start[] asm("_binary_client_key_start");
-    extern const uint8_t client_key_pem_end[] asm("_binary_client_key_end");
-    extern const uint8_t server_cert_pem_start[] asm("_binary_ca_crt_start");
-    extern const uint8_t server_cert_pem_end[] asm("_binary_ca_crt_end");
+    // extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");
+    // extern const uint8_t client_cert_pem_end[] asm("_binary_client_crt_end");
+    // extern const uint8_t client_key_pem_start[] asm("_binary_client_key_start");
+    // extern const uint8_t client_key_pem_end[] asm("_binary_client_key_end");
+    // extern const uint8_t server_cert_pem_start[] asm("_binary_ca_crt_start");
+    // extern const uint8_t server_cert_pem_end[] asm("_binary_ca_crt_end");
     
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker = {
             .address.uri = CONFIG_BROKER_URL,
-            .verification.certificate = (const char *)server_cert_pem_start,
+            // .verification.certificate = (const char *)server_cert_pem_start,
         },
-        .credentials = {
-            .authentication = {
-                .certificate = (const char *)client_cert_pem_start,
-                .key = (const char *)client_key_pem_start,
-            },
-        },
+        // .credentials = {
+        //     .authentication = {
+        //         .certificate = (const char *)client_cert_pem_start,
+        //         .key = (const char *)client_key_pem_start,
+        //     },
+        // },
     };
 
     mqtt_client_handle = esp_mqtt_client_init(&mqtt_cfg);
@@ -135,6 +203,12 @@ esp_err_t mqtt_app_start(void)
     esp_mqtt_client_start(mqtt_client_handle);
 
     led_init();
+    i2c_init();
+    bh1750_init();
+    motion_init();
+
+    xTaskCreate(motion_task, "motion_task", 2048, NULL, 5, NULL);
+    xTaskCreate(light_sensor_task, "light_sensor_task", 2048, NULL, 5, NULL);
 
     return ESP_OK;
 }

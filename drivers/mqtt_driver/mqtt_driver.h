@@ -1,4 +1,4 @@
-#define CONFIG_BROKER_URL "mqtts://10.72.180.70"
+#define CONFIG_BROKER_URL "mqtt://10.197.209.70:1884"
 
 #pragma once
 

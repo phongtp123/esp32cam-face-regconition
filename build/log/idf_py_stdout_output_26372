@@ -1,0 +1,89 @@
+Command: ninja flash
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\bootloader\esp-idf\esptool_py && C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe E:/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/mqtt_driver/CMakeFiles/__idf_mqtt_driver.dir/mqtt_driver.c.obj
+[5/10] Linking C static library esp-idf\mqtt_driver\libmqtt_driver.a
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Linking CXX executable control_led.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/build/control_led.bin
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\esp-idf\esptool_py && C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe E:/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/build/partition_table/partition-table.bin E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/build/control_led.bin"
+control_led.bin binary size 0xe7650 bytes. Smallest app partition is 0x100000 bytes. 0x189b0 bytes (10%) free.
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D E:\esp-idf-v5.5.1\components\esptool_py && C:\Users\ASUS\.espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=E:/esp-idf-v5.5.1 -D SERIAL_TOOL=C:/Users/ASUS/.espressif/python_env/idf5.5_py3.10_env/Scripts/python.exe;;E:/esp-idf-v5.5.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/build -P E:/esp-idf-v5.5.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 control_led.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port COM3
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: f0:24:f9:5a:77:f8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16489...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075f7... (100 %)
+Wrote 26240 bytes (16489 compressed) at 0x00001000 in 0.7 seconds (effective 282.0 kbit/s)...
+Hash of data verified.
+Compressed 947792 bytes to 591134...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d560... (5 %)
+Writing at 0x00027716... (8 %)
+Writing at 0x000318f7... (10 %)
+Writing at 0x0003917f... (13 %)
+Writing at 0x0003eb01... (16 %)
+Writing at 0x000446ea... (18 %)
+Writing at 0x0004a4b3... (21 %)
+Writing at 0x0005022a... (24 %)
+Writing at 0x00056073... (27 %)
+Writing at 0x0005bdc0... (29 %)
+Writing at 0x00061ae2... (32 %)
+Writing at 0x00068232... (35 %)
+Writing at 0x0006e09f... (37 %)
+Writing at 0x00073eea... (40 %)
+Writing at 0x0007969e... (43 %)
+Writing at 0x0007eb4e... (45 %)
+Writing at 0x0008459e... (48 %)
+Writing at 0x0008a136... (51 %)
+Writing at 0x0008f941... (54 %)
+Writing at 0x0009507b... (56 %)
+Writing at 0x0009ab95... (59 %)
+Writing at 0x000a0b16... (62 %)
+Writing at 0x000a64ac... (64 %)
+Writing at 0x000ac06d... (67 %)
+Writing at 0x000b1d33... (70 %)
+Writing at 0x000b7745... (72 %)
+Writing at 0x000bd299... (75 %)
+Writing at 0x000c3014... (78 %)
+Writing at 0x000c8adb... (81 %)
+Writing at 0x000ce179... (83 %)
+Writing at 0x000d5194... (86 %)
+Writing at 0x000df153... (89 %)
+Writing at 0x000e560c... (91 %)
+Writing at 0x000ebb0b... (94 %)
+Writing at 0x000f13cd... (97 %)
+Writing at 0x000f6c90... (100 %)
+Wrote 947792 bytes (591134 compressed) at 0x00010000 in 14.4 seconds (effective 526.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 444.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

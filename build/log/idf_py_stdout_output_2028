@@ -1,0 +1,648 @@
+Command: C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe E:\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\control_led.elf E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\bootloader\bootloader.elf --force-color -m 'C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe' 'E:\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov  9 2025 19:44:56[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21564h (136548) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=0003158c vaddr=3ffb0000 size=041d0h ( 16848) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=00035764 vaddr=40080000 size=0a8b4h ( 43188) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=aa6a8h (698024) map[0m
+[0;32mI (397) esp_image: segment 4: paddr=000ea6d0 vaddr=4008a8b4 size=0e1a4h ( 57764) load[0m
+[0;32mI (420) esp_image: segment 5: paddr=000f887c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (432) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (432) boot: Disabling RNG early entropy source...[0m
+[0;32mI (442) cpu_start: Multicore app[0m
+[0;32mI (451) cpu_start: Pro cpu start user code[0m
+[0;32mI (451) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (451) app_init: Application information:[0m
+[0;32mI (451) app_init: Project name:     control_led[0m
+[0;32mI (455) app_init: App version:      4e589ac-dirty[0m
+[0;32mI (460) app_init: Compile time:     Nov  9 2025 19:43:24[0m
+[0;32mI (465) app_init: ELF file SHA256:  226ace0e4...[0m
+[0;32mI (469) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (473) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (477) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (481) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (485) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB88B8 len 00027748 (157 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (507) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (512) heap_init: At 40098A58 len 000075A8 (29 KiB): IRAM[0m
+[0;33mW (519) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (530) spi_flash: detected chip: generic[0m
+[0;32mI (534) spi_flash: flash io: dio[0m
+[0;33mW (537) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (590) wifi:wifi driver task: 3ffc06c4, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formatting: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (610) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (620) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (630) wifi_init: accept mbox: 6[0m
+[0;32mI (630) wifi_init: tcpip mbox: 32[0m
+[0;32mI (630) wifi_init: udp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp mbox: 6[0m
+[0;32mI (640) wifi_init: tcp tx win: 5760[0m
+[0;32mI (640) wifi_init: tcp rx win: 5760[0m
+[0;32mI (650) wifi_init: tcp mss: 1440[0m
+[0;32mI (650) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (650) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (690) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (690) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (750) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (770) wifi:mode : sta (f0:24:f9:5a:77:f8)[0m
+[0;32mI (770) wifi:enable tsf[0m
+[0;32mI (770) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (770) wifi_driver: wifi_station_initialize finished. Connecting to SSID:Redmi12[0m
+[0;32mI (1100) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1100) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1110) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1120) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1140) wifi:connected with Redmi12, aid = 3, channel 1, BW20, bssid = de:ec:cd:c7:89:f8[0m
+[0;32mI (1140) wifi:security: WPA2-PSK, phy: bgn, rssi: -35[0m
+[0;32mI (1150) wifi:pm start, type: 0[0m
+
+[0;32mI (1150) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1230) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1230) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2180) esp_netif_handlers: sta ip: 10.197.209.214, mask: 255.255.255.0, gw: 10.197.209.72[0m
+[0;32mI (2180) wifi_driver: Got IP: 10.197.209.214[0m
+[0;32mI (2180) wifi_driver: Connected to AP SSID:Redmi12 password:12345678[0m
+[0;32mI (2180) wifi:state: run -> init (0x0)[0m
+[0;32mI (2200) wifi:pm stop, total sleep time: 0 us / 1041866 us[0m
+
+[0;32mI (2200) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2200) wifi:ifx:0, phymode(new:2, sta nvs: 3 ap nvs: 3)[0m
+[0;32mI (2210) wifi:enable tsf[0m
+[0;32mI (2210) wifi_driver: Retrying to connect to the AP...[0m
+[1;31mE (2210) wifi:sta is connecting, return error[0m
+[0;32mI (2220) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2220) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2230) MQTT: Other event id:7[0m
+[1;31mE (2230) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (2240) esp-tls: Failed to open new connection[0m
+[1;31mE (2240) transport_base: Failed to open a new connection[0m
+[0;32mI (2240) wifi:E (2250) mqtt_client: Error transport connect[0m
+state: auth -> assoc (0x0)
+[0;32mI (2250) MQTT: MQTT_EVENT_ERROR[0m
+[0;32mI (2240) LED_Driver: LED strip đã khởi tạo thành công[0m
+[1;31mE (2260) MQTT: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2270) MQTT: Last errno string (Success)[0m
+[0;32mI (2270) MQTT: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2260) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2280) LED_Driver: Infrared LED initialized on GPIO 27[0m
+[0;32mI (2280) LIGHT_SENSOR: Light Sensor initialized on GPIO 14[0m
+[0;32mI (2290) MOTION: PIR Motion sensor initialized on GPIO 12[0m
+[0;32mI (2290) wifi:connected with Redmi12, aid = 4, channel 1, BW20, bssid = de:ec:cd:c7:89:f8[0m
+[0;32mI (2300) wifi:security: WPA2-PSK, phy: bg, rssi: -35[0m
+[0;32mI (2310) wifi:pm start, type: 0[0m
+
+[0;32mI (2310) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2320) main_task: Returned from app_main()[0m
+[0;32mI (2350) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (2350) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (3340) esp_netif_handlers: sta ip: 10.197.209.214, mask: 255.255.255.0, gw: 10.197.209.72[0m
+[0;32mI (3340) wifi_driver: Got IP: 10.197.209.214[0m
+[0;33mW (11820) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (11820) MQTT: Publish motion status (1) msg_id=-1[0m
+[0;32mI (11820) MQTT: Motion detected![0m
+[0;32mI (12280) MQTT: Other event id:7[0m
+[0;32mI (13550) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (13560) MQTT: Subscribed to /server/led (msg_id=51441)[0m
+[0;32mI (13560) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=51441[0m
+[0;32mI (21820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (21820) MQTT: Motion stopped![0m
+[0;32mI (32320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (32320) MQTT: Motion detected![0m
+[0;32mI (44320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (44320) MQTT: Motion stopped![0m
+���������������������������������������������������������������� (62820) MQTT: Publish motion status (1) msg_id=0
+[0;32mI (62820) MQTT: Motion detected![0m
+[0;32mI (79990) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (79990) LED_Driver: LED bật[0m
+[0;32mI (79990) MQTT: Publish LED status (1) msg_id=42655[0m
+[0;32mI (80000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42655[0m
+[0;32mI (98320) LED_Driver: Infrared LED bật[0m
+[0;32mI (98320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (98820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (98820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (123820) LED_Driver: Infrared LED bật[0m
+[0;32mI (123820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (124320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (124320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (149320) LED_Driver: Infrared LED bật[0m
+[0;32mI (149320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (149820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (149820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (171320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (171320) MQTT: Motion stopped![0m
+[0;32mI (173820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (173820) MQTT: Motion detected![0m
+[0;32mI (174820) LED_Driver: Infrared LED bật[0m
+[0;32mI (174820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (175320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (175320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (196570) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (196570) LED_Driver: LED tắt[0m
+[0;32mI (196570) MQTT: Publish LED status (0) msg_id=1455[0m
+[0;32mI (196590) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1455[0m
+[0;32mI (200320) LED_Driver: Infrared LED bật[0m
+[0;32mI (200320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (200820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (200820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (204320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (204320) MQTT: Motion stopped![0m
+[0;32mI (206820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (206820) MQTT: Motion detected![0m
+[0;32mI (228820) LED_Driver: Infrared LED bật[0m
+[0;32mI (228820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (229320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (229320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (247820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (247820) MQTT: Motion stopped![0m
+[0;32mI (254320) LED_Driver: Infrared LED bật[0m
+[0;32mI (254320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (254820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (254820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (281320) LED_Driver: Infrared LED bật[0m
+[0;32mI (281320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (284320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (284320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (309320) LED_Driver: Infrared LED bật[0m
+[0;32mI (309320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (316320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (316320) MQTT: Motion detected![0m
+[0;32mI (346820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (346820) MQTT: Motion stopped![0m
+[0;32mI (359320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (359320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (384320) LED_Driver: Infrared LED bật[0m
+[0;32mI (384320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (398320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (398320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (406820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (406820) MQTT: Motion detected![0m
+[0;32mI (436820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (436820) MQTT: Motion stopped![0m
+[0;32mI (438320) LED_Driver: Infrared LED bật[0m
+[0;32mI (438320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (441820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (441820) MQTT: Motion detected![0m
+[0;32mI (508820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (508820) MQTT: Motion stopped![0m
+[0;32mI (513320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (513320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (532820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (532820) MQTT: Motion detected![0m
+[0;32mI (538320) LED_Driver: Infrared LED bật[0m
+[0;32mI (538320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (538820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (538820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (541820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (541820) MQTT: Motion stopped![0m
+[0;32mI (554820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (554820) MQTT: Motion detected![0m
+[0;32mI (565330) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (565330) LED_Driver: LED bật[0m
+[0;32mI (565340) MQTT: Publish LED status (1) msg_id=31104[0m
+[0;32mI (565350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31104[0m
+[0;32mI (568010) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (568010) LED_Driver: LED tắt[0m
+[0;32mI (568020) MQTT: Publish LED status (0) msg_id=30709[0m
+[0;32mI (568030) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30709[0m
+[0;32mI (578820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (578820) MQTT: Motion stopped![0m
+[0;32mI (581320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (581320) MQTT: Motion detected![0m
+[0;32mI (582740) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (582750) LED_Driver: LED bật[0m
+[0;32mI (582750) MQTT: Publish LED status (1) msg_id=50161[0m
+[0;32mI (582770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50161[0m
+[0;32mI (587690) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (587700) LED_Driver: LED tắt[0m
+[0;32mI (587700) MQTT: Publish LED status (0) msg_id=51760[0m
+[0;32mI (587710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51760[0m
+[0;32mI (591820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (591820) MQTT: Motion stopped![0m
+[0;32mI (599320) LED_Driver: Infrared LED bật[0m
+[0;32mI (599320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (602820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (602820) MQTT: Motion detected![0m
+[0;32mI (611820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (611820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (631280) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (631280) LED_Driver: LED bật[0m
+[0;32mI (631290) MQTT: Publish LED status (1) msg_id=50272[0m
+[0;32mI (631300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50272[0m
+[0;32mI (636820) LED_Driver: Infrared LED bật[0m
+[0;32mI (636820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (639320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (639320) MQTT: Motion stopped![0m
+[0;32mI (644820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (644820) MQTT: Motion detected![0m
+[0;32mI (645120) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (645130) LED_Driver: LED tắt[0m
+[0;32mI (645130) MQTT: Publish LED status (0) msg_id=56511[0m
+[0;32mI (645140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56511[0m
+[0;32mI (645280) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (645290) LED_Driver: LED bật[0m
+[0;32mI (645290) MQTT: Publish LED status (1) msg_id=17251[0m
+[0;32mI (645310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17251[0m
+[0;32mI (652820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (652820) MQTT: Motion stopped![0m
+[0;32mI (656820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (656820) MQTT: Motion detected![0m
+[0;32mI (657070) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (657070) LED_Driver: LED tắt[0m
+[0;32mI (657070) MQTT: Publish LED status (0) msg_id=29268[0m
+[0;32mI (657090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29268[0m
+[0;32mI (657340) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (657350) LED_Driver: LED bật[0m
+[0;32mI (657350) MQTT: Publish LED status (1) msg_id=2796[0m
+[0;32mI (657360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2796[0m
+[0;32mI (669320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (669320) MQTT: Motion stopped![0m
+[0;32mI (671820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (671820) MQTT: Motion detected![0m
+[0;32mI (676400) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (676400) LED_Driver: LED tắt[0m
+[0;32mI (676410) MQTT: Publish LED status (0) msg_id=22937[0m
+[0;32mI (676430) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22937[0m
+[0;32mI (679730) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (679730) LED_Driver: LED bật[0m
+[0;32mI (679730) MQTT: Publish LED status (1) msg_id=13221[0m
+[0;32mI (679750) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13221[0m
+[0;32mI (679820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (679820) MQTT: Motion stopped![0m
+[0;32mI (682320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (682320) MQTT: Motion detected![0m
+����������������������������������������������������������������(692990) MQTT: MQTT_EVENT_DATA
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (693000) LED_Driver: LED tắt[0m
+[0;32mI (693000) MQTT: Publish LED status (0) msg_id=36745[0m
+[0;32mI (693010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36745[0m
+[0;32mI (697420) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (697420) LED_Driver: LED bật[0m
+[0;32mI (697420) MQTT: Publish LED status (1) msg_id=12242[0m
+[0;32mI (697560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12242[0m
+[0;32mI (704320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (704320) MQTT: Motion stopped![0m
+[0;32mI (719320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (719320) MQTT: Motion detected![0m
+[0;32mI (719990) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (719990) LED_Driver: LED tắt[0m
+[0;32mI (720000) MQTT: Publish LED status (0) msg_id=33717[0m
+[0;32mI (720010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33717[0m
+[0;32mI (740320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (740320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (744130) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (744130) LED_Driver: LED bật[0m
+[0;32mI (744140) MQTT: Publish LED status (1) msg_id=51578[0m
+[0;32mI (744150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51578[0m
+[0;32mI (748080) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (748080) LED_Driver: LED tắt[0m
+[0;32mI (748080) MQTT: Publish LED status (0) msg_id=64947[0m
+[0;32mI (748090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64947[0m
+[0;32mI (750900) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (750900) LED_Driver: LED bật[0m
+[0;32mI (750910) MQTT: Publish LED status (1) msg_id=14292[0m
+[0;32mI (750910) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14292[0m
+[0;32mI (755540) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (755540) LED_Driver: LED tắt[0m
+[0;32mI (755540) MQTT: Publish LED status (0) msg_id=38236[0m
+[0;32mI (755560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38236[0m
+[0;32mI (766820) LED_Driver: Infrared LED bật[0m
+[0;32mI (766820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (767320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (767320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (769200) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (769200) LED_Driver: LED bật[0m
+[0;32mI (769200) MQTT: Publish LED status (1) msg_id=3955[0m
+[0;32mI (769230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3955[0m
+[0;32mI (780290) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (780300) LED_Driver: LED tắt[0m
+[0;32mI (780300) MQTT: Publish LED status (0) msg_id=20222[0m
+[0;32mI (780310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20222[0m
+[0;32mI (784880) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (784890) LED_Driver: LED bật[0m
+[0;32mI (784890) MQTT: Publish LED status (1) msg_id=12090[0m
+[0;32mI (784900) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12090[0m
+[0;32mI (793830) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (793840) LED_Driver: LED tắt[0m
+[0;32mI (793840) MQTT: Publish LED status (0) msg_id=40030[0m
+[0;32mI (793900) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40030[0m
+[0;32mI (794320) LED_Driver: Infrared LED bật[0m
+[0;32mI (794320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (795690) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (795690) LED_Driver: LED bật[0m
+[0;32mI (795690) MQTT: Publish LED status (1) msg_id=10594[0m
+[0;32mI (795710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10594[0m
+[0;32mI (801560) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (801560) LED_Driver: LED tắt[0m
+[0;32mI (801560) MQTT: Publish LED status (0) msg_id=19859[0m
+[0;32mI (801580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19859[0m
+[0;32mI (809360) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (809370) LED_Driver: LED bật[0m
+[0;32mI (809370) MQTT: Publish LED status (1) msg_id=49938[0m
+[0;32mI (809380) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49938[0m
+[0;32mI (812140) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (812150) LED_Driver: LED tắt[0m
+[0;32mI (812150) MQTT: Publish LED status (0) msg_id=2544[0m
+[0;32mI (812160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2544[0m
+[0;32mI (816820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (816820) MQTT: Motion stopped![0m
+[0;32mI (825820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (825820) MQTT: Motion detected![0m
+����������������������������������������������������������������832820) MQTT: Publish motion status (0) msg_id=0
+[0;32mI (832820) MQTT: Motion stopped![0m
+[0;32mI (845320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (845320) MQTT: Motion detected![0m
+[0;32mI (853240) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (853250) LED_Driver: LED bật[0m
+[0;32mI (853250) MQTT: Publish LED status (1) msg_id=18392[0m
+[0;32mI (853260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18392[0m
+[0;32mI (853820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (853820) MQTT: Motion stopped![0m
+[0;32mI (867320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (867320) MQTT: Motion detected![0m
+[0;32mI (872400) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (872400) LED_Driver: LED tắt[0m
+[0;32mI (872400) MQTT: Publish LED status (0) msg_id=9362[0m
+[0;32mI (872410) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9362[0m
+[0;32mI (873620) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (873620) LED_Driver: LED bật[0m
+[0;32mI (873630) MQTT: Publish LED status (1) msg_id=27050[0m
+[0;32mI (873640) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27050[0m
+[0;32mI (880360) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (880360) LED_Driver: LED tắt[0m
+[0;32mI (880370) MQTT: Publish LED status (0) msg_id=60816[0m
+[0;32mI (880380) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60816[0m
+[0;32mI (885320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (885320) MQTT: Motion stopped![0m
+[0;32mI (885370) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (885370) LED_Driver: LED bật[0m
+[0;32mI (885370) MQTT: Publish LED status (1) msg_id=27281[0m
+[0;32mI (885390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27281[0m
+[0;32mI (887820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (887820) MQTT: Motion detected![0m
+[0;32mI (890250) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (890250) LED_Driver: LED tắt[0m
+[0;32mI (890260) MQTT: Publish LED status (0) msg_id=39100[0m
+[0;32mI (890280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39100[0m
+[0;32mI (899820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (899820) MQTT: Motion stopped![0m
+[0;32mI (905320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (905320) MQTT: Motion detected![0m
+[0;32mI (905810) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (905810) LED_Driver: LED bật[0m
+[0;32mI (905820) MQTT: Publish LED status (1) msg_id=9043[0m
+[0;32mI (905820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9043[0m
+[0;32mI (906910) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (906920) LED_Driver: LED tắt[0m
+[0;32mI (906920) MQTT: Publish LED status (0) msg_id=29214[0m
+[0;32mI (906940) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29214[0m
+[0;32mI (913560) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (913570) LED_Driver: LED bật[0m
+[0;32mI (913570) MQTT: Publish LED status (1) msg_id=54988[0m
+[0;32mI (913590) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54988[0m
+[0;32mI (918170) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (918180) LED_Driver: LED tắt[0m
+[0;32mI (918180) MQTT: Publish LED status (0) msg_id=51236[0m
+[0;32mI (918190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51236[0m
+[0;32mI (919820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (919820) MQTT: Motion stopped![0m
+[0;32mI (939820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (939820) MQTT: Motion detected![0m
+[0;32mI (942440) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (942440) LED_Driver: LED bật[0m
+[0;32mI (942450) MQTT: Publish LED status (1) msg_id=10852[0m
+[0;32mI (942460) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10852[0m
+[0;32mI (950320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (950320) MQTT: Motion stopped![0m
+[0;32mI (952820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (952820) MQTT: Motion detected![0m
+[0;32mI (959680) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (959680) LED_Driver: LED tắt[0m
+[0;32mI (959690) MQTT: Publish LED status (0) msg_id=28299[0m
+[0;32mI (959700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28299[0m
+[0;32mI (968300) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (968300) LED_Driver: LED bật[0m
+[0;32mI (968300) MQTT: Publish LED status (1) msg_id=18690[0m
+[0;32mI (968310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18690[0m
+[0;32mI (974820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (974820) MQTT: Motion stopped![0m
+[0;32mI (974850) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (974850) LED_Driver: LED tắt[0m
+[0;32mI (974860) MQTT: Publish LED status (0) msg_id=20027[0m
+[0;32mI (974880) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20027[0m
+[0;32mI (979820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (979820) MQTT: Motion detected![0m
+[0;32mI (985130) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (985130) LED_Driver: LED bật[0m
+[0;32mI (985130) MQTT: Publish LED status (1) msg_id=11038[0m
+[0;32mI (985140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11038[0m
+[0;32mI (989790) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (989790) LED_Driver: LED tắt[0m
+[0;32mI (989790) MQTT: Publish LED status (0) msg_id=34206[0m
+[0;32mI (989890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34206[0m
+[0;32mI (998100) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (998100) LED_Driver: LED bật[0m
+[0;32mI (998100) MQTT: Publish LED status (1) msg_id=59632[0m
+[0;32mI (998120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59632[0m
+[0;32mI (1001270) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (1001270) LED_Driver: LED tắt[0m
+[0;32mI (1001280) MQTT: Publish LED status (0) msg_id=20250[0m
+[0;32mI (1001290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20250[0m
+[0;32mI (1007820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1007820) MQTT: Motion stopped![0m
+���������������������������������������������������������������� (1011320) MQTT: Publish motion status (1) msg_id=0
+[0;32mI (1011320) MQTT: Motion detected![0m
+[0;32mI (1020820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1020820) MQTT: Motion stopped![0m
+[0;32mI (1024820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1024820) MQTT: Motion detected![0m
+[0;32mI (1065820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (1065820) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (1075320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1075320) MQTT: Motion stopped![0m
+[0;32mI (1077820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1077820) MQTT: Motion detected![0m
+[0;32mI (1086820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1086820) MQTT: Motion stopped![0m
+[0;32mI (1092320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1092320) MQTT: Motion detected![0m
+[0;32mI (1106020) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (1106020) LED_Driver: LED bật[0m
+[0;32mI (1106030) MQTT: Publish LED status (1) msg_id=38670[0m
+[0;32mI (1106040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38670[0m
+[0;32mI (1112120) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (1112130) LED_Driver: LED tắt[0m
+[0;32mI (1112130) MQTT: Publish LED status (0) msg_id=441[0m
+[0;32mI (1112140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=441[0m
+[0;32mI (1115320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1115320) MQTT: Motion stopped![0m
+[0;32mI (1124820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1124820) MQTT: Motion detected![0m
+[0;32mI (1126820) LED_Driver: Infrared LED bật[0m
+[0;32mI (1126820) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (1127320) LED_Driver: Infrared LED tắt[0m
+[0;32mI (1127320) MQTT: Day time! Turn off the infrared light[0m
+[0;32mI (1141820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1141820) MQTT: Motion stopped![0m
+[0;32mI (1148820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1148820) MQTT: Motion detected![0m
+[0;32mI (1154250) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (1154250) LED_Driver: LED bật[0m
+[0;32mI (1154260) MQTT: Publish LED status (1) msg_id=14522[0m
+[0;32mI (1154260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14522[0m
+[0;32mI (1159820) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1159820) MQTT: Motion stopped![0m
+[0;32mI (1163320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1163320) MQTT: Motion detected![0m
+[0;32mI (1167820) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (1167820) LED_Driver: LED tắt[0m
+[0;32mI (1167830) MQTT: Publish LED status (0) msg_id=56713[0m
+[0;32mI (1167860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56713[0m
+[0;32mI (1176320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1176320) MQTT: Motion stopped![0m
+[0;32mI (1180320) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1180320) MQTT: Motion detected![0m
+[0;32mI (1215320) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1215320) MQTT: Motion stopped![0m
+[0;32mI (1217820) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1217820) MQTT: Motion detected![0m
+����������������������������������������������������������������1227320) LED_Driver: Infrared LED bật
+[0;32mI (1227320) MQTT: Night time! Turn on the infrared light[0m
+[0;32mI (1227820) LED_Driver: Infrared LED tắt[0m
+[0;32mI (1227820) MQTT: Day time! Turn off the infrared light[0m

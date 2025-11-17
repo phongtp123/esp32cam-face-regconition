@@ -1,0 +1,45 @@
+Command: C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe E:\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\control_led.elf E:\esp-idf\examples\get-started\book-esp32c3-iot-projects-main\device_firmware\pbl3\control_led\build\bootloader\bootloader.elf --force-color -m 'C:\Users\ASUS\.espressif\python_env\idf5.5_py3.10_env\Scripts\python.exe' 'E:\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x400894b9: [0;33mpanic_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40089481: [0;33mesp_system_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4009132d: [0;33mabort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x40178738: [0;33mmain_task[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a139: [0;33mvPortTaskWrapper[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x400894b9: [0;33mpanic_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40089481: [0;33mesp_system_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4009132d: [0;33mabort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x40178738: [0;33mmain_task[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a139: [0;33mvPortTaskWrapper[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x400894b9: [0;33mpanic_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40089481: [0;33mesp_system_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4009132d: [0;33mabort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x40178738: [0;33mmain_task[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a139: [0;33mvPortTaskWrapper[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x400894b9: [0;33mpanic_abort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x4009132d: [0;33mabort[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d892b: [0;33mapp_main[0m[0m at [0;32mE:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/control_led/main/control_led.c[0m[0m:[1;31m31[0m
+[0m--- 0x40178738: [0;33mmain_task[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a139: [0;33mvPortTaskWrapper[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mE:/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

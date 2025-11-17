@@ -1,5 +1,6 @@
 #include "led_strip.h"
 #include "driver/rmt_tx.h"
+#include "driver/gpio.h"
 #include "esp_log.h"
 
 #include "led_driver.h"
