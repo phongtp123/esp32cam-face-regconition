@@ -1,0 +1,21 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "ESP-IDF PowerShell": {
+            "path": "powershell.exe",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "& 'E:/esp-idf-v5.5.1/export.ps1'"
+            ]
+        },
+        "ESP-IDF CMD": {
+            "path": "cmd.exe",
+            "args": [
+                "/k",
+                "E:/esp-idf-v5.5.1/export.bat"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "ESP-IDF PowerShell",
+    "cmake.sourceDirectory": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/1_blink"
+}
