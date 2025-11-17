@@ -14,6 +14,7 @@
 #include "freertos/task.h"
 
 #include "wifi_driver.h"
+#include "mqtt_driver.h"
 
 // support IDF 5.x
 #ifndef portTICK_RATE_MS
@@ -235,6 +236,8 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(5000));
         abort();
     }
+
+    mqtt_app_start();
 
     startCameraServer();
     

@@ -165,9 +165,22 @@ E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/p
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_driver/libwifi_driver.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__qrcode/libespressif__qrcode.a
+<<<<<<< HEAD
+=======
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/libled_driver.a
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/libespressif__cJSON.a
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/libmqtt_driver.a
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt/libmqtt.a
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/libled_driver.a
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/libespressif__cJSON.a
+>>>>>>> temp_branch
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/libespressif__esp_jpeg.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp32-camera/libespressif__esp32-camera.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/libespressif__esp_jpeg.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/main/libmain.a
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_driver/libwifi_driver.a
+<<<<<<< HEAD
+=======
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/libmqtt_driver.a
+>>>>>>> temp_branch
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp32-camera/libespressif__esp32-camera.a

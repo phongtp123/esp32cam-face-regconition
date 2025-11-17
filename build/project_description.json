@@ -1,7 +1,11 @@
 {
     "version":            "1.2",
     "project_name":       "camera_example",
+<<<<<<< HEAD
     "project_version":    "v5.1.6-dirty",
+=======
+    "project_version":    "1",
+>>>>>>> temp_branch
     "project_path":       "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example",
     "idf_path":           "E:/esp-idf-v5.5.1",
     "build_dir":          "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build",
@@ -25,8 +29,13 @@
         "COMPONENT_KCONFIGS_PROJBUILD" : "E:/esp-idf-v5.5.1/components/bootloader/Kconfig.projbuild;E:/esp-idf-v5.5.1/components/esp_app_format/Kconfig.projbuild;E:/esp-idf-v5.5.1/components/esp_rom/Kconfig.projbuild;E:/esp-idf-v5.5.1/components/esptool_py/Kconfig.projbuild;E:/esp-idf-v5.5.1/components/partition_table/Kconfig.projbuild;E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/main/Kconfig.projbuild"
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
+<<<<<<< HEAD
     "build_components" : [ "app_trace", "app_update", "bootloader", "bootloader_support", "bt", "cmock", "console", "cxx", "driver", "efuse", "esp-tls", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_cam", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_isp", "esp_driver_jpeg", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_ppa", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_touch_sens", "esp_driver_tsens", "esp_driver_twai", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_eth", "esp_event", "esp_gdbstub", "esp_hid", "esp_http_client", "esp_http_server", "esp_https_ota", "esp_https_server", "esp_hw_support", "esp_lcd", "esp_local_ctrl", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "espcoredump", "espressif__esp32-camera", "espressif__esp_jpeg", "espressif__qrcode", "esptool_py", "fatfs", "freertos", "hal", "heap", "http_parser", "idf_test", "ieee802154", "json", "log", "lwip", "main", "mbedtls", "mqtt", "newlib", "nvs_flash", "nvs_sec_provider", "openthread", "partition_table", "perfmon", "protobuf-c", "protocomm", "pthread", "rt", "sdmmc", "soc", "spi_flash", "spiffs", "tcp_transport", "ulp", "unity", "usb", "vfs", "wear_levelling", "wifi_driver", "wifi_provisioning", "wpa_supplicant", "xtensa", "" ],
     "build_component_paths" : [ "E:/esp-idf-v5.5.1/components/app_trace", "E:/esp-idf-v5.5.1/components/app_update", "E:/esp-idf-v5.5.1/components/bootloader", "E:/esp-idf-v5.5.1/components/bootloader_support", "E:/esp-idf-v5.5.1/components/bt", "E:/esp-idf-v5.5.1/components/cmock", "E:/esp-idf-v5.5.1/components/console", "E:/esp-idf-v5.5.1/components/cxx", "E:/esp-idf-v5.5.1/components/driver", "E:/esp-idf-v5.5.1/components/efuse", "E:/esp-idf-v5.5.1/components/esp-tls", "E:/esp-idf-v5.5.1/components/esp_adc", "E:/esp-idf-v5.5.1/components/esp_app_format", "E:/esp-idf-v5.5.1/components/esp_bootloader_format", "E:/esp-idf-v5.5.1/components/esp_coex", "E:/esp-idf-v5.5.1/components/esp_common", "E:/esp-idf-v5.5.1/components/esp_driver_ana_cmpr", "E:/esp-idf-v5.5.1/components/esp_driver_bitscrambler", "E:/esp-idf-v5.5.1/components/esp_driver_cam", "E:/esp-idf-v5.5.1/components/esp_driver_dac", "E:/esp-idf-v5.5.1/components/esp_driver_gpio", "E:/esp-idf-v5.5.1/components/esp_driver_gptimer", "E:/esp-idf-v5.5.1/components/esp_driver_i2c", "E:/esp-idf-v5.5.1/components/esp_driver_i2s", "E:/esp-idf-v5.5.1/components/esp_driver_isp", "E:/esp-idf-v5.5.1/components/esp_driver_jpeg", "E:/esp-idf-v5.5.1/components/esp_driver_ledc", "E:/esp-idf-v5.5.1/components/esp_driver_mcpwm", "E:/esp-idf-v5.5.1/components/esp_driver_parlio", "E:/esp-idf-v5.5.1/components/esp_driver_pcnt", "E:/esp-idf-v5.5.1/components/esp_driver_ppa", "E:/esp-idf-v5.5.1/components/esp_driver_rmt", "E:/esp-idf-v5.5.1/components/esp_driver_sdio", "E:/esp-idf-v5.5.1/components/esp_driver_sdm", "E:/esp-idf-v5.5.1/components/esp_driver_sdmmc", "E:/esp-idf-v5.5.1/components/esp_driver_sdspi", "E:/esp-idf-v5.5.1/components/esp_driver_spi", "E:/esp-idf-v5.5.1/components/esp_driver_touch_sens", "E:/esp-idf-v5.5.1/components/esp_driver_tsens", "E:/esp-idf-v5.5.1/components/esp_driver_twai", "E:/esp-idf-v5.5.1/components/esp_driver_uart", "E:/esp-idf-v5.5.1/components/esp_driver_usb_serial_jtag", "E:/esp-idf-v5.5.1/components/esp_eth", "E:/esp-idf-v5.5.1/components/esp_event", "E:/esp-idf-v5.5.1/components/esp_gdbstub", "E:/esp-idf-v5.5.1/components/esp_hid", "E:/esp-idf-v5.5.1/components/esp_http_client", "E:/esp-idf-v5.5.1/components/esp_http_server", "E:/esp-idf-v5.5.1/components/esp_https_ota", "E:/esp-idf-v5.5.1/components/esp_https_server", "E:/esp-idf-v5.5.1/components/esp_hw_support", "E:/esp-idf-v5.5.1/components/esp_lcd", "E:/esp-idf-v5.5.1/components/esp_local_ctrl", "E:/esp-idf-v5.5.1/components/esp_mm", "E:/esp-idf-v5.5.1/components/esp_netif", "E:/esp-idf-v5.5.1/components/esp_netif_stack", "E:/esp-idf-v5.5.1/components/esp_partition", "E:/esp-idf-v5.5.1/components/esp_phy", "E:/esp-idf-v5.5.1/components/esp_pm", "E:/esp-idf-v5.5.1/components/esp_psram", "E:/esp-idf-v5.5.1/components/esp_ringbuf", "E:/esp-idf-v5.5.1/components/esp_rom", "E:/esp-idf-v5.5.1/components/esp_security", "E:/esp-idf-v5.5.1/components/esp_system", "E:/esp-idf-v5.5.1/components/esp_timer", "E:/esp-idf-v5.5.1/components/esp_vfs_console", "E:/esp-idf-v5.5.1/components/esp_wifi", "E:/esp-idf-v5.5.1/components/espcoredump", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__esp32-camera", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__esp_jpeg", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__qrcode", "E:/esp-idf-v5.5.1/components/esptool_py", "E:/esp-idf-v5.5.1/components/fatfs", "E:/esp-idf-v5.5.1/components/freertos", "E:/esp-idf-v5.5.1/components/hal", "E:/esp-idf-v5.5.1/components/heap", "E:/esp-idf-v5.5.1/components/http_parser", "E:/esp-idf-v5.5.1/components/idf_test", "E:/esp-idf-v5.5.1/components/ieee802154", "E:/esp-idf-v5.5.1/components/json", "E:/esp-idf-v5.5.1/components/log", "E:/esp-idf-v5.5.1/components/lwip", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/main", "E:/esp-idf-v5.5.1/components/mbedtls", "E:/esp-idf-v5.5.1/components/mqtt", "E:/esp-idf-v5.5.1/components/newlib", "E:/esp-idf-v5.5.1/components/nvs_flash", "E:/esp-idf-v5.5.1/components/nvs_sec_provider", "E:/esp-idf-v5.5.1/components/openthread", "E:/esp-idf-v5.5.1/components/partition_table", "E:/esp-idf-v5.5.1/components/perfmon", "E:/esp-idf-v5.5.1/components/protobuf-c", "E:/esp-idf-v5.5.1/components/protocomm", "E:/esp-idf-v5.5.1/components/pthread", "E:/esp-idf-v5.5.1/components/rt", "E:/esp-idf-v5.5.1/components/sdmmc", "E:/esp-idf-v5.5.1/components/soc", "E:/esp-idf-v5.5.1/components/spi_flash", "E:/esp-idf-v5.5.1/components/spiffs", "E:/esp-idf-v5.5.1/components/tcp_transport", "E:/esp-idf-v5.5.1/components/ulp", "E:/esp-idf-v5.5.1/components/unity", "E:/esp-idf-v5.5.1/components/usb", "E:/esp-idf-v5.5.1/components/vfs", "E:/esp-idf-v5.5.1/components/wear_levelling", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/wifi_driver", "E:/esp-idf-v5.5.1/components/wifi_provisioning", "E:/esp-idf-v5.5.1/components/wpa_supplicant", "E:/esp-idf-v5.5.1/components/xtensa", "" ],
+=======
+    "build_components" : [ "app_trace", "app_update", "bootloader", "bootloader_support", "bt", "cmock", "console", "cxx", "driver", "efuse", "esp-tls", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_cam", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_isp", "esp_driver_jpeg", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_ppa", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_touch_sens", "esp_driver_tsens", "esp_driver_twai", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_eth", "esp_event", "esp_gdbstub", "esp_hid", "esp_http_client", "esp_http_server", "esp_https_ota", "esp_https_server", "esp_hw_support", "esp_lcd", "esp_local_ctrl", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_wifi", "espcoredump", "espressif__cJSON", "espressif__esp32-camera", "espressif__esp_jpeg", "espressif__qrcode", "esptool_py", "fatfs", "freertos", "hal", "heap", "http_parser", "idf_test", "ieee802154", "json", "led_driver", "log", "lwip", "main", "mbedtls", "mqtt", "mqtt_driver", "newlib", "nvs_flash", "nvs_sec_provider", "openthread", "partition_table", "perfmon", "protobuf-c", "protocomm", "pthread", "rt", "sdmmc", "soc", "spi_flash", "spiffs", "tcp_transport", "ulp", "unity", "usb", "vfs", "wear_levelling", "wifi_driver", "wifi_provisioning", "wpa_supplicant", "xtensa", "" ],
+    "build_component_paths" : [ "E:/esp-idf-v5.5.1/components/app_trace", "E:/esp-idf-v5.5.1/components/app_update", "E:/esp-idf-v5.5.1/components/bootloader", "E:/esp-idf-v5.5.1/components/bootloader_support", "E:/esp-idf-v5.5.1/components/bt", "E:/esp-idf-v5.5.1/components/cmock", "E:/esp-idf-v5.5.1/components/console", "E:/esp-idf-v5.5.1/components/cxx", "E:/esp-idf-v5.5.1/components/driver", "E:/esp-idf-v5.5.1/components/efuse", "E:/esp-idf-v5.5.1/components/esp-tls", "E:/esp-idf-v5.5.1/components/esp_adc", "E:/esp-idf-v5.5.1/components/esp_app_format", "E:/esp-idf-v5.5.1/components/esp_bootloader_format", "E:/esp-idf-v5.5.1/components/esp_coex", "E:/esp-idf-v5.5.1/components/esp_common", "E:/esp-idf-v5.5.1/components/esp_driver_ana_cmpr", "E:/esp-idf-v5.5.1/components/esp_driver_bitscrambler", "E:/esp-idf-v5.5.1/components/esp_driver_cam", "E:/esp-idf-v5.5.1/components/esp_driver_dac", "E:/esp-idf-v5.5.1/components/esp_driver_gpio", "E:/esp-idf-v5.5.1/components/esp_driver_gptimer", "E:/esp-idf-v5.5.1/components/esp_driver_i2c", "E:/esp-idf-v5.5.1/components/esp_driver_i2s", "E:/esp-idf-v5.5.1/components/esp_driver_isp", "E:/esp-idf-v5.5.1/components/esp_driver_jpeg", "E:/esp-idf-v5.5.1/components/esp_driver_ledc", "E:/esp-idf-v5.5.1/components/esp_driver_mcpwm", "E:/esp-idf-v5.5.1/components/esp_driver_parlio", "E:/esp-idf-v5.5.1/components/esp_driver_pcnt", "E:/esp-idf-v5.5.1/components/esp_driver_ppa", "E:/esp-idf-v5.5.1/components/esp_driver_rmt", "E:/esp-idf-v5.5.1/components/esp_driver_sdio", "E:/esp-idf-v5.5.1/components/esp_driver_sdm", "E:/esp-idf-v5.5.1/components/esp_driver_sdmmc", "E:/esp-idf-v5.5.1/components/esp_driver_sdspi", "E:/esp-idf-v5.5.1/components/esp_driver_spi", "E:/esp-idf-v5.5.1/components/esp_driver_touch_sens", "E:/esp-idf-v5.5.1/components/esp_driver_tsens", "E:/esp-idf-v5.5.1/components/esp_driver_twai", "E:/esp-idf-v5.5.1/components/esp_driver_uart", "E:/esp-idf-v5.5.1/components/esp_driver_usb_serial_jtag", "E:/esp-idf-v5.5.1/components/esp_eth", "E:/esp-idf-v5.5.1/components/esp_event", "E:/esp-idf-v5.5.1/components/esp_gdbstub", "E:/esp-idf-v5.5.1/components/esp_hid", "E:/esp-idf-v5.5.1/components/esp_http_client", "E:/esp-idf-v5.5.1/components/esp_http_server", "E:/esp-idf-v5.5.1/components/esp_https_ota", "E:/esp-idf-v5.5.1/components/esp_https_server", "E:/esp-idf-v5.5.1/components/esp_hw_support", "E:/esp-idf-v5.5.1/components/esp_lcd", "E:/esp-idf-v5.5.1/components/esp_local_ctrl", "E:/esp-idf-v5.5.1/components/esp_mm", "E:/esp-idf-v5.5.1/components/esp_netif", "E:/esp-idf-v5.5.1/components/esp_netif_stack", "E:/esp-idf-v5.5.1/components/esp_partition", "E:/esp-idf-v5.5.1/components/esp_phy", "E:/esp-idf-v5.5.1/components/esp_pm", "E:/esp-idf-v5.5.1/components/esp_psram", "E:/esp-idf-v5.5.1/components/esp_ringbuf", "E:/esp-idf-v5.5.1/components/esp_rom", "E:/esp-idf-v5.5.1/components/esp_security", "E:/esp-idf-v5.5.1/components/esp_system", "E:/esp-idf-v5.5.1/components/esp_timer", "E:/esp-idf-v5.5.1/components/esp_vfs_console", "E:/esp-idf-v5.5.1/components/esp_wifi", "E:/esp-idf-v5.5.1/components/espcoredump", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__cJSON", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__esp32-camera", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__esp_jpeg", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__qrcode", "E:/esp-idf-v5.5.1/components/esptool_py", "E:/esp-idf-v5.5.1/components/fatfs", "E:/esp-idf-v5.5.1/components/freertos", "E:/esp-idf-v5.5.1/components/hal", "E:/esp-idf-v5.5.1/components/heap", "E:/esp-idf-v5.5.1/components/http_parser", "E:/esp-idf-v5.5.1/components/idf_test", "E:/esp-idf-v5.5.1/components/ieee802154", "E:/esp-idf-v5.5.1/components/json", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/led_driver", "E:/esp-idf-v5.5.1/components/log", "E:/esp-idf-v5.5.1/components/lwip", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/main", "E:/esp-idf-v5.5.1/components/mbedtls", "E:/esp-idf-v5.5.1/components/mqtt", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/mqtt_driver", "E:/esp-idf-v5.5.1/components/newlib", "E:/esp-idf-v5.5.1/components/nvs_flash", "E:/esp-idf-v5.5.1/components/nvs_sec_provider", "E:/esp-idf-v5.5.1/components/openthread", "E:/esp-idf-v5.5.1/components/partition_table", "E:/esp-idf-v5.5.1/components/perfmon", "E:/esp-idf-v5.5.1/components/protobuf-c", "E:/esp-idf-v5.5.1/components/protocomm", "E:/esp-idf-v5.5.1/components/pthread", "E:/esp-idf-v5.5.1/components/rt", "E:/esp-idf-v5.5.1/components/sdmmc", "E:/esp-idf-v5.5.1/components/soc", "E:/esp-idf-v5.5.1/components/spi_flash", "E:/esp-idf-v5.5.1/components/spiffs", "E:/esp-idf-v5.5.1/components/tcp_transport", "E:/esp-idf-v5.5.1/components/ulp", "E:/esp-idf-v5.5.1/components/unity", "E:/esp-idf-v5.5.1/components/usb", "E:/esp-idf-v5.5.1/components/vfs", "E:/esp-idf-v5.5.1/components/wear_levelling", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/wifi_driver", "E:/esp-idf-v5.5.1/components/wifi_provisioning", "E:/esp-idf-v5.5.1/components/wpa_supplicant", "E:/esp-idf-v5.5.1/components/xtensa", "" ],
+>>>>>>> temp_branch
     "build_component_info" : {
         "app_trace": {
             "alias": "idf::app_trace",
@@ -1048,6 +1057,24 @@
             "sources": [ "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_init.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_common.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_flash.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_uart.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_elf.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_binary.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_sha.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/core_dump_crc.c", "E:/esp-idf-v5.5.1/components/espcoredump/src/port/xtensa/core_dump_port.c" ],
             "include_dirs": [ "include", "include/port/xtensa" ]
         },
+<<<<<<< HEAD
+=======
+        "espressif__cJSON": {
+            "alias": "idf::espressif__cJSON",
+            "target": "___idf_espressif__cJSON",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__cJSON",
+            "type": "LIBRARY",
+            "lib": "__idf_espressif__cJSON",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/libespressif__cJSON.a",
+            "sources": [ "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__cJSON/cJSON/cJSON.c", "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__cJSON/cJSON/cJSON_Utils.c" ],
+            "include_dirs": [ "cJSON" ]
+        },
+>>>>>>> temp_branch
         "espressif__esp32-camera": {
             "alias": "idf::espressif__esp32-camera",
             "target": "___idf_espressif__esp32-camera",
@@ -1228,6 +1255,24 @@
             "sources": [ "E:/esp-idf-v5.5.1/components/json/cJSON/cJSON.c", "E:/esp-idf-v5.5.1/components/json/cJSON/cJSON_Utils.c" ],
             "include_dirs": [ "cJSON" ]
         },
+<<<<<<< HEAD
+=======
+        "led_driver": {
+            "alias": "idf::led_driver",
+            "target": "___idf_led_driver",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/led_driver",
+            "type": "LIBRARY",
+            "lib": "__idf_led_driver",
+            "reqs": [ "driver" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/libled_driver.a",
+            "sources": [ "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/led_driver/led_driver.c" ],
+            "include_dirs": [ "." ]
+        },
+>>>>>>> temp_branch
         "log": {
             "alias": "idf::log",
             "target": "___idf_log",
@@ -1266,7 +1311,11 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
+<<<<<<< HEAD
             "priv_reqs": [ "nvs_flash", "esp_psram", "esp_http_server", "wifi_driver", "espressif__esp32-camera" ],
+=======
+            "priv_reqs": [ "nvs_flash", "esp_psram", "esp_http_server", "wifi_driver", "mqtt_driver", "espressif__esp32-camera" ],
+>>>>>>> temp_branch
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp32-camera" ],
             "file": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/main/libmain.a",
@@ -1303,6 +1352,24 @@
             "sources": [ "E:/esp-idf-v5.5.1/components/mqtt/esp-mqtt/mqtt_client.c", "E:/esp-idf-v5.5.1/components/mqtt/esp-mqtt/lib/mqtt_msg.c", "E:/esp-idf-v5.5.1/components/mqtt/esp-mqtt/lib/mqtt_outbox.c", "E:/esp-idf-v5.5.1/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c" ],
             "include_dirs": [ "E:/esp-idf-v5.5.1/components/mqtt/esp-mqtt/include" ]
         },
+<<<<<<< HEAD
+=======
+        "mqtt_driver": {
+            "alias": "idf::mqtt_driver",
+            "target": "___idf_mqtt_driver",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/mqtt_driver",
+            "type": "LIBRARY",
+            "lib": "__idf_mqtt_driver",
+            "reqs": [],
+            "priv_reqs": [ "mqtt", "led_driver", "espressif__cJSON" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [ "espressif__cJSON" ],
+            "file": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/libmqtt_driver.a",
+            "sources": [ "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/mqtt_driver/mqtt_driver.c" ],
+            "include_dirs": [ "." ]
+        },
+>>>>>>> temp_branch
         "newlib": {
             "alias": "idf::newlib",
             "target": "___idf_newlib",
@@ -2968,11 +3035,42 @@
             "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/main",
             "lib": "__idf_main",
             "reqs": [],
+<<<<<<< HEAD
             "priv_reqs": [ "nvs_flash", "esp_psram", "esp_http_server", "wifi_driver", "espressif__esp32-camera" ],
+=======
+            "priv_reqs": [ "nvs_flash", "esp_psram", "esp_http_server", "wifi_driver", "mqtt_driver", "espressif__esp32-camera" ],
+>>>>>>> temp_branch
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp32-camera" ],
             "include_dirs": []
         },
+<<<<<<< HEAD
+=======
+        "led_driver": {
+            "alias": "idf::led_driver",
+            "target": "___idf_led_driver",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/led_driver",
+            "lib": "__idf_led_driver",
+            "reqs": [ "driver" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "." ]
+        },
+        "mqtt_driver": {
+            "alias": "idf::mqtt_driver",
+            "target": "___idf_mqtt_driver",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/drivers/mqtt_driver",
+            "lib": "__idf_mqtt_driver",
+            "reqs": [],
+            "priv_reqs": [ "mqtt", "led_driver", "espressif__cJSON" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [ "espressif__cJSON" ],
+            "include_dirs": [ "." ]
+        },
+>>>>>>> temp_branch
         "wifi_driver": {
             "alias": "idf::wifi_driver",
             "target": "___idf_wifi_driver",
@@ -2985,6 +3083,21 @@
             "managed_priv_reqs": [ "espressif__qrcode" ],
             "include_dirs": [ "." ]
         },
+<<<<<<< HEAD
+=======
+        "espressif__cJSON": {
+            "alias": "idf::espressif__cJSON",
+            "target": "___idf_espressif__cJSON",
+            "prefix": "idf",
+            "dir": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/managed_components/espressif__cJSON",
+            "lib": "__idf_espressif__cJSON",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "cJSON" ]
+        },
+>>>>>>> temp_branch
         "espressif__esp32-camera": {
             "alias": "idf::espressif__esp32-camera",
             "target": "___idf_espressif__esp32-camera",

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 7958f1080413d444fce37dd1b2df5d5f  E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/bootloader/bootloader.bin
+=======
+3c1567867be89ab7fdaf1971df6d56b0  E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/bootloader/bootloader.bin
+>>>>>>> temp_branch

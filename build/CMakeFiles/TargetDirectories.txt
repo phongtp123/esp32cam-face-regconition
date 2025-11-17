@@ -860,6 +860,30 @@ E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/p
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_driver/CMakeFiles/install.dir
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_driver/CMakeFiles/install/local.dir
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/wifi_driver/CMakeFiles/install/strip.dir
+<<<<<<< HEAD
+=======
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/__idf_led_driver.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/edit_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/rebuild_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/list_install_components.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/install.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/install/local.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/CMakeFiles/install/strip.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/__idf_espressif__cJSON.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/edit_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/rebuild_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/list_install_components.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/install.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/install/local.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/CMakeFiles/install/strip.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/__idf_mqtt_driver.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/edit_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/rebuild_cache.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/list_install_components.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/install.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/install/local.dir
+E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/CMakeFiles/install/strip.dir
+>>>>>>> temp_branch
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/CMakeFiles/__idf_espressif__esp_jpeg.dir
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/CMakeFiles/edit_cache.dir
 E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/CMakeFiles/rebuild_cache.dir

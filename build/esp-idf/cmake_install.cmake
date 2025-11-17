@@ -569,6 +569,24 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+<<<<<<< HEAD
+=======
+  include("E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/led_driver/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__cJSON/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/mqtt_driver/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+>>>>>>> temp_branch
   include("E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/pbl3/camera_example/build/esp-idf/espressif__esp_jpeg/cmake_install.cmake")
 endif()
 

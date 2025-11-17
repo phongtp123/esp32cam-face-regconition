@@ -1,4 +1,4 @@
-idf_component_register(SRCS "take_picture.c" "control_light.c"
+idf_component_register(SRCS "take_picture.c"
                         PRIV_INCLUDE_DIRS "."
-                        PRIV_REQUIRES nvs_flash esp_psram esp_http_server wifi_driver) 
+                        PRIV_REQUIRES nvs_flash esp_psram esp_http_server wifi_driver mqtt_driver) 
  

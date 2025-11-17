@@ -2,7 +2,7 @@ import cv2 as cv
 import threading
 import time
 
-ESP32_STREAM_URL = "http://10.72.180.194/stream"
+ESP32_STREAM_URL = "http://10.197.209.194/stream"
 
 cap_lock = threading.Lock()
 cap = None
@@ -29,3 +29,4 @@ def release_video_capture():
             cap.release()
             cap = None
             print("[INFO] Released VideoCapture")
+

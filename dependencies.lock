@@ -1,4 +1,17 @@
 dependencies:
+<<<<<<< HEAD
+=======
+  espressif/cJSON:
+    component_hash: 9372811fb197926f522c467627cf4a8e72b681e0366e17879631da801103aef3
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.7.19
+>>>>>>> temp_branch
   espressif/esp32-camera:
     component_hash: 44a314ca50a150cffe54cc47390503a5930867409ac05b6e156ca568d7121ddd
     dependencies:
@@ -35,9 +48,17 @@ dependencies:
       type: idf
     version: 5.5.1
 direct_dependencies:
+<<<<<<< HEAD
 - espressif/esp32-camera
 - espressif/qrcode
 - idf
 manifest_hash: e2a6a1fdb58753866337bab592fe170c07298f0f80411a6873ddfb873d54e866
+=======
+- espressif/cJSON
+- espressif/esp32-camera
+- espressif/qrcode
+- idf
+manifest_hash: f1dca3c23ced91020f3242b109bd599def2104f5b10094122a232e238c4a17b4
+>>>>>>> temp_branch
 target: esp32
 version: 2.0.0
