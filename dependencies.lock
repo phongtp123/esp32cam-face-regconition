@@ -1,6 +1,4 @@
 dependencies:
-<<<<<<< HEAD
-=======
   espressif/cJSON:
     component_hash: 9372811fb197926f522c467627cf4a8e72b681e0366e17879631da801103aef3
     dependencies:
@@ -11,9 +9,8 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 1.7.19
->>>>>>> temp_branch
   espressif/esp32-camera:
-    component_hash: 44a314ca50a150cffe54cc47390503a5930867409ac05b6e156ca568d7121ddd
+    component_hash: f0a608b109935a5389221eee5090ec61f51b0df1a0749531fe59d33aaf263233
     dependencies:
     - name: espressif/esp_jpeg
       registry_url: https://components.espressif.com
@@ -25,7 +22,7 @@ dependencies:
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 2.1.3
+    version: 2.1.4
   espressif/esp_jpeg:
     component_hash: defb83669293cbf86d0fa86b475ba5517aceed04ed70db435388c151ab37b5d7
     dependencies:
@@ -46,19 +43,12 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.5.1
+    version: 5.1.0
 direct_dependencies:
-<<<<<<< HEAD
-- espressif/esp32-camera
-- espressif/qrcode
-- idf
-manifest_hash: e2a6a1fdb58753866337bab592fe170c07298f0f80411a6873ddfb873d54e866
-=======
 - espressif/cJSON
 - espressif/esp32-camera
 - espressif/qrcode
 - idf
 manifest_hash: f1dca3c23ced91020f3242b109bd599def2104f5b10094122a232e238c4a17b4
->>>>>>> temp_branch
 target: esp32
 version: 2.0.0

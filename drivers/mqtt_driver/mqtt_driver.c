@@ -26,7 +26,7 @@ static void handle_motion_message(const char *data, int len)
         return;
     }
 
-    cJSON *status = cJSON_GetObjectItem(root, "status");
+    cJSON *status = cJSON_GetObjectItem(root, "motion");
     if (cJSON_IsNumber(status)) {
         if (status->valueint == 1 && night_time) {
             led_on();
@@ -48,7 +48,7 @@ static void handle_light_sensor_message(const char *data, int len)
         return;
     }
 
-    cJSON *status = cJSON_GetObjectItem(root, "status");
+    cJSON *status = cJSON_GetObjectItem(root, "lstatus");
     if (cJSON_IsNumber(status)) {
         if (status->valueint == 1) {
             night_time = true;
@@ -117,7 +117,7 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
 }
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
-    ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%d", base, event_id);
+    ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%ld", base, event_id);
     mqtt_event_handler_cb(event_data);
 }
 
