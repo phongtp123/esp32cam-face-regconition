@@ -29,7 +29,7 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.5.1
+    version: 5.1.0
 direct_dependencies:
 - espressif/cJSON
 - espressif/led_strip

@@ -1,0 +1,232 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x33 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6168
+load:0x40078000,len:15576
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 18 2025 09:20:18[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2706ch (159852) map[0m
+[0;32mI (146) esp_image: segment 1: paddr=00037094 vaddr=3ffb0000 size=037a0h ( 14240) load[0m
+[0;32mI (152) esp_image: segment 2: paddr=0003a83c vaddr=40080000 size=057dch ( 22492) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a3f4ch (671564) map[0m
+[0;32mI (404) esp_image: segment 4: paddr=000e3f74 vaddr=400857dc size=117ach ( 71596) load[0m
+[0;32mI (446) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (446) boot: Disabling RNG early entropy source...[0m
+[0;32mI (455) cpu_start: Multicore app[0m
+[0;32mI (456) cpu_start: Pro cpu up.[0m
+[0;32mI (456) cpu_start: Starting app cpu, entry point is 0x4008148c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (470) cpu_start: Pro cpu start user code[0m
+[0;32mI (470) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (470) cpu_start: Application information:[0m
+[0;32mI (472) cpu_start: Project name:     control_led[0m
+[0;32mI (476) cpu_start: App version:      394ac757-dirty[0m
+[0;32mI (481) cpu_start: Compile time:     Nov 18 2025 09:20:06[0m
+[0;32mI (486) cpu_start: ELF file SHA256:  3c72c484...[0m
+[0;32mI (490) cpu_start: ESP-IDF:          v5.1-dirty[0m
+[0;32mI (494) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (498) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (502) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (506) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (512) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFB7E60 len 000281A0 (160 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (528) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (533) heap_init: At 40096F88 len 00009078 (36 KiB): IRAM[0m
+[0;32mI (540) spi_flash: detected chip: generic[0m
+[0;32mI (542) spi_flash: flash io: dio[0m
+[0;33mW (545) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (558) app_start: Starting scheduler on CPU0[0m
+[0;32mI (562) app_start: Starting scheduler on CPU1[0m
+[0;32mI (562) main_task: Started on CPU0[0m
+[0;32mI (572) main_task: Calling app_main()[0m
+[0;32mI (612) wifi:wifi driver task: 3ffbff60, prio:23, stack:6656, core=0[0m
+[0;32mI (622) wifi:wifi firmware version: b2f1f86[0m
+[0;32mI (622) wifi:wifi certification version: v7.0[0m
+[0;32mI (632) wifi:config NVS flash: enabled[0m
+[0;32mI (632) wifi:config nano formating: disabled[0m
+[0;32mI (632) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (632) wifi:Init management frame dynamic rx buffer num: 32[0m
+[0;32mI (642) wifi:Init management short buffer num: 32[0m
+[0;32mI (642) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (652) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (652) wifi:Init static rx buffer num: 10[0m
+[0;32mI (662) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (662) wifi_init: rx ba win: 6[0m
+[0;32mI (662) wifi_init: tcpip mbox: 32[0m
+[0;32mI (672) wifi_init: udp mbox: 6[0m
+[0;32mI (672) wifi_init: tcp mbox: 6[0m
+[0;32mI (672) wifi_init: tcp tx win: 5760[0m
+[0;32mI (672) wifi_init: tcp rx win: 5760[0m
+[0;32mI (682) wifi_init: tcp mss: 1440[0m
+[0;32mI (682) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (682) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (692) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+[0;32mI (792) wifi:mode : sta (f0:24:f9:5a:77:f8)[0m
+[0;32mI (792) wifi:enable tsf[0m
+[0;32mI (792) wifi:Set ps type: 0[0m
+
+[0;32mI (802) wifi_driver: wifi_station_initialize finished. Connecting to SSID:Redmi12[0m
+[0;32mI (812) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1[0m
+[0;32mI (812) wifi:state: init -> auth (b0)[0m
+[0;32mI (822) wifi:state: auth -> assoc (0)[0m
+[0;32mI (832) wifi:state: assoc -> run (10)[0m
+[0;32mI (852) wifi:connected with Redmi12, aid = 18, channel 1, BW20, bssid = e6:97:79:5d:ff:21[0m
+[0;32mI (852) wifi:security: WPA2-PSK, phy: bg, rssi: -34[0m
+[0;32mI (852) wifi:pm start, type: 0[0m
+
+[0;32mI (932) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1862) esp_netif_handlers: sta ip: 10.197.209.214, mask: 255.255.255.0, gw: 10.197.209.72[0m
+[0;32mI (1862) wifi_driver: Got IP: 10.197.209.214[0m
+[0;32mI (1862) wifi_driver: Connected to AP SSID:Redmi12 password:12345678[0m
+[0;32mI (1872) MQTT: Other event id:7[0m
+[0;32mI (1872) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1882) LED_Driver: LED strip đã khởi tạo thành công[0m
+[0;32mI (1882) LIGHT_SENSOR: I2C initialized successfully[0m
+[0;32mI (1892) LIGHT_SENSOR: BH1750 init OK[0m
+[0;32mI (1892) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1902) MOTION: PIR Motion sensor initialized on GPIO 12[0m
+[0;32mI (1902) main_task: Returned from app_main()[0m
+[0;32mI (1912) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (1912) MQTT: Subscribed to /server/led (msg_id=53022)[0m
+[0;32mI (1922) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1922) MQTT: Motion detected![0m
+[0;32mI (1922) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=53022[0m
+[0;32mI (35782) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":0}
+[0;32mI (35782) LED_Driver: LED tắt[0m
+[0;32mI (54642) MQTT: MQTT_EVENT_DATA[0m
+TOPIC=/server/led
+DATA={"status":1}
+[0;32mI (54642) LED_Driver: LED bật[0m
+[0;32mI (54902) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (54902) MQTT: Night time[0m
+[0;32mI (96422) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (96422) MQTT: Motion stopped![0m
+[0;32mI (99922) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (99922) MQTT: Motion detected![0m
+[0;32mI (200902) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (200902) MQTT: Day time[0m
+[0;32mI (206902) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (206902) MQTT: Night time[0m
+[0;32mI (207402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (207402) MQTT: Day time[0m
+[0;32mI (212402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (212402) MQTT: Night time[0m
+[0;32mI (217902) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (217902) MQTT: Day time[0m
+[0;32mI (222902) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (222902) MQTT: Night time[0m
+[0;32mI (226402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (226402) MQTT: Day time[0m
+[0;32mI (231402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (231402) MQTT: Night time[0m
+[0;32mI (244402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (244402) MQTT: Day time[0m
+[0;32mI (249402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (249402) MQTT: Night time[0m
+[0;32mI (256922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (256922) MQTT: Motion stopped![0m
+[0;32mI (259422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (259422) MQTT: Motion detected![0m
+[0;32mI (260902) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (260902) MQTT: Day time[0m
+[0;32mI (265902) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (265902) MQTT: Night time[0m
+[0;32mI (269402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (269402) MQTT: Day time[0m
+[0;32mI (274402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (274402) MQTT: Night time[0m
+[0;32mI (275902) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (275902) MQTT: Day time[0m
+[0;32mI (292402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (292402) MQTT: Night time[0m
+[0;32mI (293402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (293402) MQTT: Day time[0m
+[0;32mI (298902) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (298902) MQTT: Night time[0m
+[0;32mI (299402) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (299402) MQTT: Day time[0m
+[0;32mI (310422) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (310422) MQTT: Motion stopped![0m
+[0;32mI (316402) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (316402) MQTT: Night time[0m
+[0;32mI (316422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (316422) MQTT: Motion detected![0m
+[0;32mI (337922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (337922) MQTT: Motion stopped![0m
+[0;32mI (341922) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (341922) MQTT: Motion detected![0m
+[0;32mI (353422) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (353422) MQTT: Motion stopped![0m
+[0;32mI (355922) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (355922) MQTT: Motion detected![0m
+[0;32mI (457922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (457922) MQTT: Motion stopped![0m
+[0;32mI (460422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (460422) MQTT: Motion detected![0m
+[0;32mI (562922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (562922) MQTT: Motion stopped![0m
+[0;32mI (571422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (571422) MQTT: Motion detected![0m
+[0;32mI (577922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (577922) MQTT: Motion stopped![0m
+[0;32mI (626422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (626422) MQTT: Motion detected![0m
+[0;32mI (666922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (666922) MQTT: Motion stopped![0m
+[0;32mI (669422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (669422) MQTT: Motion detected![0m
+[0;32mI (723922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (723922) MQTT: Motion stopped![0m
+[0;32mI (728422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (728422) MQTT: Motion detected![0m
+[0;32mI (741922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (741922) MQTT: Motion stopped![0m
+[0;32mI (747422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (747422) MQTT: Motion detected![0m
+[0;32mI (785902) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (785902) MQTT: Day time[0m
+[0;32mI (835422) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (835422) MQTT: Motion stopped![0m
+[0;32mI (837922) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (837922) MQTT: Motion detected![0m
+[0;32mI (846922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (846922) MQTT: Motion stopped![0m
+[0;32mI (851422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (851422) MQTT: Motion detected![0m
+[0;32mI (1082922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1082922) MQTT: Motion stopped![0m
+[0;32mI (1090422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1090422) MQTT: Motion detected![0m
+[0;32mI (1102922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1102922) MQTT: Motion stopped![0m
+[0;32mI (1108422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1108422) MQTT: Motion detected![0m
+[0;32mI (1203922) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1203922) MQTT: Motion stopped![0m
+[0;32mI (1206422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1206422) MQTT: Motion detected![0m
+[0;32mI (1215422) MQTT: Publish motion status (0) msg_id=0[0m
+[0;32mI (1215422) MQTT: Motion stopped![0m
+[0;32mI (1218422) MQTT: Publish motion status (1) msg_id=0[0m
+[0;32mI (1218422) MQTT: Motion detected![0m

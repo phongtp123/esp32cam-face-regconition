@@ -17,5 +17,5 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "ESP-IDF PowerShell",
-    "cmake.sourceDirectory": "E:/esp-idf/examples/get-started/book-esp32c3-iot-projects-main/device_firmware/1_blink"
+    "cmake.sourceDirectory": "/home/r_and_tung/esp32cam-face-regconition"
 }

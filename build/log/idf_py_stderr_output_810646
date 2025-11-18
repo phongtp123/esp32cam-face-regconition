@@ -1,0 +1,40 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x40081ae2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x4008a565: [0;33mesp_system_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m84[0m
+[0m--- 0x400915e6: [0;33mabort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x400d7623: [0;33mlight_sensor_task[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/mqtt_driver/mqtt_driver.c[0m[0m:[1;31m81[0m
+[0m--- 0x4008b0c1: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m162[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x40081ae2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x4008a565: [0;33mesp_system_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m84[0m
+[0m--- 0x400915e6: [0;33mabort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x400d7623: [0;33mlight_sensor_task[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/mqtt_driver/mqtt_driver.c[0m[0m:[1;31m81[0m
+[0m--- 0x4008b0c1: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m162[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x40081ae2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x4008a565: [0;33mesp_system_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m84[0m
+[0m--- 0x400915e6: [0;33mabort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4008a55b: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m50[0m
+[0m--- 0x400db499: [0;33mbh1750_read_lux[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/light_sensor_driver/light_sensor_driver.c[0m[0m:[1;31m43[0m
+[0m--- 0x400d7623: [0;33mlight_sensor_task[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/drivers/mqtt_driver/mqtt_driver.c[0m[0m:[1;31m81[0m
+[0m--- 0x4008b0c1: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m162[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m
