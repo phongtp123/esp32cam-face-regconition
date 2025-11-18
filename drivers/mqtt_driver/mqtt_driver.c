@@ -99,6 +99,12 @@ static void light_sensor_task (void *pvParameters){
     }
 }
 
+/******************************************************************
+ * task: gửi message trên mqtt broker lên topic 'led_switch' 
+ * 
+ */
+
+
 static void handle_led_message(const char *data, int len)
 {
     cJSON *root = cJSON_ParseWithLength(data, len);
