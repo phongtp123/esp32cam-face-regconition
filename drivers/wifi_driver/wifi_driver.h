@@ -1,5 +1,5 @@
-#define LIGHT_ESP_WIFI_SSID     "Redmi12"
-#define LIGHT_ESP_WIFI_PASS     "12345678"
+#define LIGHT_ESP_WIFI_SSID     "A Khiem"
+#define LIGHT_ESP_WIFI_PASS     "1234512345"
 #define LIGHT_ESP_MAXIMUM_RETRY 5
 
 #pragma once

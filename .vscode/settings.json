@@ -17,5 +17,8 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "ESP-IDF PowerShell",
-    "cmake.sourceDirectory": "/home/r_and_tung/esp32cam-face-regconition"
+    "cmake.sourceDirectory": "/home/r_and_tung/esp32cam-face-regconition",
+    "files.associations": {
+        "wifi_driver.h": "c"
+    }
 }

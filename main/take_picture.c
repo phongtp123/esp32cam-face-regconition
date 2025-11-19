@@ -215,8 +215,9 @@ void app_main(void)
 
     esp_err_t err;
 
-    esp_err_t ret = nvs_flash_init();
+    esp_err_t ret = nvs_flash_init(); // cái cần làm đúng không? 
 
+    // check for error from nvs flash init and fix it if happens 
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());
         ret = nvs_flash_init();
@@ -224,11 +225,12 @@ void app_main(void)
 
     ESP_ERROR_CHECK(ret);
 
-    if(ESP_OK != init_camera()) {
+
+    if(ESP_OK != init_camera()) { // khởi tạo camera 
         return;
     }
 
-    wifi_initialize();
+    wifi_initialize(); // khởi tạo wifi
 
     err = wifi_station_initialize();
     if (err != ESP_OK) {
@@ -237,9 +239,9 @@ void app_main(void)
         abort();
     }
 
-    mqtt_app_start();
-
-    startCameraServer();
+    mqtt_app_start(); // chạy mqtt app
+ 
+    startCameraServer(); // chạy camera server 
     
 #else
     ESP_LOGE(TAG, "Camera support is not available for this chip");
