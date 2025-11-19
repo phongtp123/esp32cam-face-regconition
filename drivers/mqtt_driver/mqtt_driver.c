@@ -18,7 +18,7 @@ int attempt = 0;
 static void log_error_if_nonzero(const char * message, int error_code)
 {
     if (error_code != 0) {
-        ESP_LOGE(TAG, "Last error %s: 0x%x", message, error_code);
+        ESP_LOGE(TAG, "Last error %s: 0x%x", message, error_code); 
     }
 }
 
@@ -37,6 +37,8 @@ static void publish_motion_status(int status)
     free(json_str);
 }
 
+
+// --- publish lsensor lên mqtt à
 static void publish_lsensor_status(int status)
 {
     if (!mqtt_client_handle) return;
@@ -52,6 +54,8 @@ static void publish_lsensor_status(int status)
     free(json_str);
 }
 
+
+// --- à kiểm tra xem có chuyển động hay không? 
 static void motion_task(void *pvParameters)
 {
     while (1)
@@ -76,6 +80,8 @@ static void motion_task(void *pvParameters)
     }
 }
 
+
+// --- kiểm tra xem có ánh sáng hay không? 
 static void light_sensor_task (void *pvParameters){
     while(1) {
         float sensor_value = bh1750_read_lux();
@@ -99,12 +105,9 @@ static void light_sensor_task (void *pvParameters){
     }
 }
 
-/******************************************************************
- * task: gửi message trên mqtt broker lên topic 'led_switch' 
- * 
- */
 
 
+// --- hàm này là hàm gì? 
 static void handle_led_message(const char *data, int len)
 {
     cJSON *root = cJSON_ParseWithLength(data, len);
@@ -127,6 +130,9 @@ static void handle_led_message(const char *data, int len)
     cJSON_Delete(root);
 }
 
+
+
+// --- này là gì? 
 static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
 {
     esp_mqtt_client_handle_t client = event->client;
@@ -175,11 +181,16 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
     return ESP_OK;
 }
 
+
+// --- này là gì? 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%ld", base, event_id);
     mqtt_event_handler_cb(event_data);
 }
 
+
+
+// bắt đầu mqtt app 
 esp_err_t mqtt_app_start(void)
 {
     // extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");
