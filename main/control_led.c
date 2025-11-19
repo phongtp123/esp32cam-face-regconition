@@ -13,7 +13,7 @@ void app_main(void)
 {
     esp_err_t err;
 
-    esp_err_t ret = nvs_flash_init();
+    esp_err_t ret = nvs_flash_init(); // khởi tạo nvs
 
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());
@@ -22,7 +22,7 @@ void app_main(void)
 
     ESP_ERROR_CHECK(ret);
 
-    wifi_initialize();
+    wifi_initialize(); // khởi tạo wifi 
 
     err = wifi_station_initialize();
     if (err != ESP_OK) {
@@ -31,7 +31,7 @@ void app_main(void)
         abort();
     }
 
-    err = mqtt_app_start();
+    err = mqtt_app_start(); // khởi tạo mqtt app - để gửi hoặc nhận dữ liệu
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Could not start MQTT service");
         vTaskDelay(pdMS_TO_TICKS(5000));
