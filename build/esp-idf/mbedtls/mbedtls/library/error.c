@@ -1,1 +1,0 @@
-/home/r_and_tung/esp/esp-idf/components/mbedtls/mbedtls/library/error.c
