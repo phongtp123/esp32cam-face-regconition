@@ -1,4 +1,4 @@
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/xtensa/libxtensa.a
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/riscv/libriscv.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/esp_ringbuf/libesp_ringbuf.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/efuse/libefuse.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/driver/libdriver.a
@@ -56,15 +56,11 @@
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/fatfs/libfatfs.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/json/libjson.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt/libmqtt.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/perfmon/libperfmon.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/spiffs/libspiffs.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__qrcode/libespressif__qrcode.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_driver/libwifi_driver.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_driver/libled_driver.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/motion_driver/libmotion_driver.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/light_sensor_driver/liblight_sensor_driver.a
-/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__cJSON/libespressif__cJSON.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/libmqtt_driver.a
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_driver/libled_driver.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/main/libmain.a
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/utils/libutils.a

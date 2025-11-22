@@ -1,4 +1,3 @@
-idf_component_register(SRCS "control_led.c"
-                        PRIV_INCLUDE_DIRS "."
-                        REQUIRES wifi_driver mqtt_driver nvs_flash freertos
-                        ) 
+idf_component_register(SRCS "led-control.c"
+                    INCLUDE_DIRS "."
+                    REQUIRES mqtt_driver led_driver)

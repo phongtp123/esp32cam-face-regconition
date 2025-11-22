@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/r_and_tung/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/r_and_tung/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/xtensa/cmake_install.cmake")
+  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/riscv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -379,11 +379,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/perfmon/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/spiffs/cmake_install.cmake")
 endif()
 
@@ -414,7 +409,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__led_strip/cmake_install.cmake")
+  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -424,26 +419,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/motion_driver/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/light_sensor_driver/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__cJSON/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/main/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/utils/cmake_install.cmake")
 endif()
 
