@@ -22,9 +22,9 @@ static void log_error_if_nonzero(const char * message, int error_code)
     }
 }
 
-static void publish_motion_status(int status)
+static void publish_motion_status(int status) 
 {
-    if (!mqtt_client_handle) return;
+    if (!mqtt_client_handle) return; 
 
     cJSON *root = cJSON_CreateObject();
     cJSON_AddNumberToObject(root, "motion", status);
@@ -49,6 +49,21 @@ static void publish_lsensor_status(int status)
 
     int msg_id = esp_mqtt_client_publish(mqtt_client_handle, "/lsensor/status", json_str, 0, 0, 0);
     ESP_LOGI(TAG, "Publish motion status (%d) msg_id=%d", status, msg_id);
+
+    cJSON_Delete(root);
+    free(json_str);
+}
+
+static void publish_switch_status(int status) 
+{
+    if (!mqtt_client_handle) return; 
+
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(root, "switch", status);
+    char *json_str = cJSON_PrintUnformatted(root);
+
+    int msg_id = esp_mqtt_client_publish(mqtt_client_handle, "switch/status", json_str, 0, 0, 0);
+    ESP_LOGI(TAG, "Publish switch status (%d) msg_id=%d", status, msg_id);
 
     cJSON_Delete(root);
     free(json_str);
@@ -119,9 +134,9 @@ static void handle_led_message(const char *data, int len)
     cJSON *status = cJSON_GetObjectItem(root, "status");
     if (cJSON_IsNumber(status)) {
         if (status->valueint == 1) {
-            led_on();
+            publish_switch_status(1); 
         } else {
-            led_off();
+            publish_switch_status(0); 
         }
     } else {
         ESP_LOGW(TAG, "Không tìm thấy trường 'status' hợp lệ");
