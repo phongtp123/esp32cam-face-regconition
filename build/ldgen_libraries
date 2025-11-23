@@ -60,6 +60,7 @@
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__qrcode/libespressif__qrcode.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_driver/libwifi_driver.a
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/libled_test_driver.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/libmqtt_driver.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_driver/libled_driver.a
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/main/libmain.a

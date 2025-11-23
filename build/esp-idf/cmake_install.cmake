@@ -409,6 +409,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/cmake_install.cmake")
 endif()
 

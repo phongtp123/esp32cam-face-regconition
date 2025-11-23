@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "mqtt_driver.h"
+#include "led_test_driver.h"
 
 static const char *TAG = "MQTT CLIENT";
 
@@ -35,6 +36,8 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         
         case (MQTT_EVENT_CONNECTED):
             ESP_LOGI(TAG, "MQTT connected"); 
+
+            led2_on(); 
 
             // subcribe ngay sau khi kết nối
             esp_mqtt_client_subscribe(client, "esp32c3/test", 1); 
@@ -86,6 +89,9 @@ void mqtt_init(void)
 
     wifi_start(); 
 
+    led_test_init(); 
+    led1_on(); 
+
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = BROKER_ADDR_URI,
     };
@@ -104,4 +110,5 @@ void mqtt_init(void)
     esp_mqtt_client_start(client);
     ESP_LOGI(TAG, "start MQTT successfully"); 
 
+    
 }

@@ -1,0 +1,20 @@
+CMake Error at /home/r_and_tung/esp/esp-idf/tools/cmake/component.cmake:479 (add_library):
+  Cannot find source file:
+
+    /home/r_and_tung/esp32cam-face-regconition/components/led_test_driver/led_driver.c
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+  .f95 .f03 .hip .ispc
+Call Stack (most recent call first):
+  components/led_test_driver/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Error at /home/r_and_tung/esp/esp-idf/tools/cmake/component.cmake:479 (add_library):
+  No SOURCES given to target: __idf_led_test_driver
+Call Stack (most recent call first):
+  components/led_test_driver/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ninja: error: rebuilding 'build.ninja': subcommand failed

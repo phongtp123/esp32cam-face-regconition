@@ -2,7 +2,6 @@
 #include "driver/gpio.h"
 #include "mqtt_driver.h"
 #include <string.h>
-#include "cJSON.h"
 #include "led_driver.h"
 
 static const char *TAG = "LED_DRIVER"; 

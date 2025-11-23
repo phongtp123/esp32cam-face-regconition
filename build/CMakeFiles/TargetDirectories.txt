@@ -607,6 +607,13 @@
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_driver/CMakeFiles/install.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_driver/CMakeFiles/install/local.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_driver/CMakeFiles/install/strip.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/__idf_led_test_driver.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/edit_cache.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/rebuild_cache.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/list_install_components.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install/local.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install/strip.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/CMakeFiles/__idf_mqtt_driver.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/CMakeFiles/edit_cache.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/mqtt_driver/CMakeFiles/rebuild_cache.dir
