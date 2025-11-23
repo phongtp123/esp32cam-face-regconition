@@ -600,6 +600,13 @@
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/__idf_led_test_driver.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/edit_cache.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/rebuild_cache.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/list_install_components.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install/local.dir
+/home/r_and_tung/esp32cam-face-regconition/build/esp-idf/led_test_driver/CMakeFiles/install/strip.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__qrcode/CMakeFiles/__idf_espressif__qrcode.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__qrcode/CMakeFiles/edit_cache.dir
 /home/r_and_tung/esp32cam-face-regconition/build/esp-idf/espressif__qrcode/CMakeFiles/rebuild_cache.dir

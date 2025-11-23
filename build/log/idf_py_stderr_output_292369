@@ -1,0 +1,23 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m--- 0x400d72b6: [0;33mapp_main[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/main/control_led.c[0m[0m:[1;31m33[0m
+[0m--- 0x40081ae2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x4008a565: [0;33mesp_system_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m84[0m
+[0m--- 0x400915e6: [0;33mabort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d72b6: [0;33mapp_main[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/main/control_led.c[0m[0m:[1;31m33[0m
+[0m--- 0x40172127: [0;33mmain_task[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008b0c1: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m162[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m--- 0x400d72b6: [0;33mapp_main[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/main/control_led.c[0m[0m:[1;31m33[0m
+[0m--- 0x40081ae2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x4008a565: [0;33mesp_system_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m84[0m
+[0m--- 0x400915e6: [0;33mabort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/newlib/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x400d72b6: [0;33mapp_main[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/main/control_led.c[0m[0m:[1;31m33[0m
+[0m--- 0x40172127: [0;33mmain_task[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008b0c1: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m162[0m
+[0m--- 0x40080400: [0;33m_init[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4008148c: [0;33mcall_start_cpu1[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/port/cpu_start.c[0m[0m:[1;31m154[0m
+[0m

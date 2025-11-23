@@ -5,7 +5,8 @@
 
 #include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
+#include "freertos/task.h" 
+#include "led_test_driver.h"
 
 static const char *TAG = "Control light";
 
@@ -22,6 +23,7 @@ void app_main(void)
 
     ESP_ERROR_CHECK(ret);
 
+    led_test_init(); 
     wifi_initialize(); // khởi tạo wifi 
 
     err = wifi_station_initialize();
@@ -29,6 +31,8 @@ void app_main(void)
         ESP_LOGE(TAG, "Could not start Wifi. Aborting!!!");
         vTaskDelay(pdMS_TO_TICKS(5000));
         abort();
+    } else {
+        led1_on(); 
     }
 
     err = mqtt_app_start(); // khởi tạo mqtt app - để gửi hoặc nhận dữ liệu
@@ -36,5 +40,19 @@ void app_main(void)
         ESP_LOGE(TAG, "Could not start MQTT service");
         vTaskDelay(pdMS_TO_TICKS(5000));
         abort();
+    } else {
+        led2_on(); 
     }
+
+
+    // while (1) {
+    //     led1_on(); 
+    //     led2_on(); 
+    //     vTaskDelay(pdMS_TO_TICKS(100)); 
+
+    //     led1_off(); 
+    //     led2_off(); 
+    //     vTaskDelay(pdMS_TO_TICKS(100)); 
+    // }
+
 }
