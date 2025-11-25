@@ -1,18 +1,24 @@
 from flask import Response
 import cv2 as cv
 import time
+import os
 import threading
 import numpy as np
-from appUtils import get_video_capture, release_video_capture
+from appUtils import get_video_capture, release_video_capture, init_video_writer
 from mqtt import init_mqtt
-from human_detect_test import non_max_suppression_fast
+# from human_detect_test import non_max_suppression_fast
+from ultralytics import YOLO
 # face_cascade_path = "./haarcascade_frontalface_alt.xml"
 # face_cascade = cv.CascadeClassifier(face_cascade_path)
 
-hog = cv.HOGDescriptor()
-hog.setSVMDetector(cv.HOGDescriptor_getDefaultPeopleDetector())
+# hog = cv.HOGDescriptor()
+# hog.setSVMDetector(cv.HOGDescriptor_getDefaultPeopleDetector())
+
+model = YOLO("yolov8n.pt")
 
 motion_active = threading.Event() 
+video_writer = None
+video_filename = None
 
 TOPIC_LED = "/server/led"
 # TOPIC_LED_RESPOND = "/led/status"
@@ -59,7 +65,7 @@ def generate_no_motion_frame(width=320, height=240):
 
 def detect_frames():
     # global last_save_time
-    global is_offline, attempt
+    global is_offline, attempt, video_writer
 
     vc = get_video_capture()
     if vc is None or not vc.isOpened():
@@ -67,6 +73,7 @@ def detect_frames():
         return
     
     # frame_id = 0
+    init_video_writer("phong")
 
     while True:
         if not motion_active.is_set():
@@ -86,28 +93,37 @@ def detect_frames():
                 vc = get_video_capture()
                 continue
 
-            gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-            gray = cv.equalizeHist(gray)
-            boxes, weights = hog.detectMultiScale(frame, winStride=(2,2), scale=1.15)
+            frame = cv.resize(frame, (320, 240))
 
-            boxes = np.array([[x, y, x + w, y + h] for (x, y, w, h) in boxes])
-            confidences = [float(w) for w in weights]
-            keep = non_max_suppression_fast(boxes, confidences, overlapThresh=0.5)
+            if video_writer is not None:
+                video_writer.write(frame)
 
-            # for i, (x, y, w, h) in enumerate(faces):
-            #     cv.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 255), 2)
+            results = model(frame, imgsz=320, conf=0.4, verbose=False)
+            #-------------------------------------------------------------------------
+            # gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            # boxes, weights = hog.detectMultiScale(
+            #     gray,
+            #     winStride=(8, 8),
+            #     padding=(8, 8),
+            #     scale=1.02,
+            #     hitThreshold=0.5,
+            # )
 
-            #     # current_time = time.time()
-            #     # if current_time - last_save_time > save_interval:
-            #     #     last_save_time = current_time
+            # boxes = np.array([[x, y, x + w, y + h] for (x, y, w, h) in boxes])
+            # confidences = np.array([float(w) for w in weights])
 
-            #     #     face_img = frame[y:y + h, x:x + w]
-            #     #     filename = os.path.join(save_dir, f"face_{int(time.time())}_{frame_id}.jpg")
-            #     #     cv.imwrite(filename, face_img)
-            #     #     print(f"[INFO] Saved face image: {filename}")
-            #     #     frame_id += 1 
+            # conf_min = 0.6
+            # indices = [i for i, c in enumerate(confidences) if c > conf_min]
 
-            if len(keep) > 0:
+            # if len(indices) > 0:
+            #     boxes = boxes[indices]
+            #     confidences = confidences[indices]
+
+            # keep = non_max_suppression_fast(boxes, confidences, overlapThresh=0.5)
+            #-------------------------------------------------------------------------
+            detections = results[0].boxes
+
+            if len(detections) > 0:
                 # === Có khuôn mặt ===
                 if is_offline:
                     print("[INFO] Human detected — Turning LED ON.")
@@ -115,9 +131,15 @@ def detect_frames():
                     is_offline = False
                 attempt = 0  # reset counter
 
-                for i in keep:
-                    (xA, yA, xB, yB) = boxes[i]
-                    cv.rectangle(frame, (xA, yA), (xB, yB), (0, 255, 0), 2)
+                for box in detections:
+                    cls = int(box.cls[0])
+                    conf = float(box.conf[0])
+
+                    if cls != 0:
+                        continue
+
+                    x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+                    cv.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
             else:
                 # === Không có khuôn mặt ===

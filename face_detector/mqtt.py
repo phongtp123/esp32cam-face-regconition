@@ -2,9 +2,10 @@ import paho.mqtt.client as mqtt
 # import ssl
 import json
 
+# BROKER_URL = "10.54.117.6"
 BROKER_URL = "10.197.209.70"
-# BROKER_PORT = 8883
 BROKER_PORT = 1884
+# BROKER_PORT = 1883
 # CA_CERT = "./certs/ca.crt"
 # CLIENT_CERT = "./certs/client.crt"
 # CLIENT_KEY = "./certs/client.key"
