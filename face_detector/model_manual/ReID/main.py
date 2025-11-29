@@ -1,88 +1,67 @@
 import argparse
-import torchreid
 import torch
-import random
-import string
-from utils import NewDataset, create_data
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from utils import Classifier, ReIDDataset, init_extractor
+from train import train
+import numpy as np
+import os
 
+torch.serialization.add_safe_globals([np.dtype, np.core.multiarray.scalar])
 
 def get_parser():
     parser = argparse.ArgumentParser()    
 
+    parser.add_argument('--save_path', type=str, default='path/to/saved', help="path to saved data")
     parser.add_argument('--name', type=str, default='osnet_x1_0', help="ReID model name")
-    parser.add_argument('--img_h', type=int, default=256, help="image height")
-    parser.add_argument('--img_w', type=int, default=128, help="image width")
     parser.add_argument('--bs', type=int, default=32, help="batch size")
-    parser.add_argument('--optim', type=str, default='adam', help="optimzer")
     parser.add_argument('--lr', type=float, default=0.003, help="learning rate")
-    parser.add_argument('--lr_sch', type=str, default="single_step", help="learning rate scheduler")
-    parser.add_argument('--step', type=int, default=5, help="learning rate scheduler's step size")
-    parser.add_argument('--epochs', type=int, default=20, help="epoch count for the training loop")
-    parser.add_argument('--eval_freq', type=int, default=5, help="evaluation frequency")
-    parser.add_argument('--videos_paths', type=str, default='path/to/folder', help="video data folder path")
-    parser.add_argument('--skip_frames', type=int, default=15, help="take every N-th frame from every video for data augmentation")
-    parser.add_argument('--aug_count', type=int, default=5, help="number of augmentations to be applied on every image")
-    parser.add_argument('--save_path', type=str, default='path/to/save', help="path to save data")
+    parser.add_argument('--epochs', type=int, default=10, help="epoch count for the training loop")
+    parser.add_argument('--pretrained_model', type=str, default='path/to/pretrained_model', help="path to ReID pretrained model")
+    parser.add_argument('--classifier_path', type=str, default='path/to/pretrained_classifier', help="path to save classifier")
+    parser.add_argument('--classifier_name', type=str, default='best_model.pth', help="name of the classifier")
+    parser.add_argument('--nc', type=int, default=2, help="number of classes")
+    parser.add_argument('--log_freq', type=int, default=2, help="logging after num epochs")
         
     args = parser.parse_args()
     
     return args
 
 def main(args):
-    create_data(args)
     
+    # Preparation
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    NewDataset.dataset_dir = args.save_path
-    dataset_name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=random.randint(1, 25)))
-    torchreid.data.register_image_dataset(dataset_name, NewDataset)
+    classifier = Classifier(num_class=args.nc).to(device)
+    extractor = init_extractor(args, device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(classifier.parameters(), lr=args.lr)
 
-    datamanager = torchreid.data.ImageDataManager(
-        sources=dataset_name, 
-        height=args.img_h, 
-        width=args.img_w, 
-        batch_size_train=args.bs, 
-        batch_size_test=100,
-        transforms=["random_flip", "random_crop"]
-    )
+    # Make Dataset
+    train_neg_folder = os.path.join(args.save_path, "train", "stranger")
+    train_pos_folder = os.path.join(args.save_path, "train", "familier")
+    val_neg_folder = os.path.join(args.save_path, "valid", "stranger")
+    val_pos_folder = os.path.join(args.save_path, "valid", "familier")
 
-    model = torchreid.models.build_model(
-        name=args.name,
-        num_classes=datamanager.num_train_pids,
-        loss="triplet",
-        pretrained=True
-    ).to(device).train()
+    train_pos_list = [os.path.join(train_pos_folder, f) for f in os.listdir(train_pos_folder)]
+    train_neg_list = [os.path.join(train_neg_folder, f) for f in os.listdir(train_neg_folder)]
+    val_pos_list   = [os.path.join(val_pos_folder, f) for f in os.listdir(val_pos_folder)]
+    val_neg_list   = [os.path.join(val_neg_folder, f) for f in os.listdir(val_neg_folder)]
 
+    train_pos = ReIDDataset(train_pos_list)
+    train_neg = ReIDDataset(train_neg_list)
+    train_ds = train_pos + train_neg
 
-    optimizer = torchreid.optim.build_optimizer(
-        model,
-        optim=args.optim,
-        lr=args.lr, 
-    )
+    val_pos = ReIDDataset(val_pos_list)
+    val_neg = ReIDDataset(val_neg_list)
+    val_ds = val_pos + val_neg
 
-    scheduler = torchreid.optim.build_lr_scheduler(
-        optimizer,
-        lr_scheduler=args.lr_sch, 
-        stepsize=args.step,
-    )
+    # Make Dataloader
+    train_loader = DataLoader(train_ds, batch_size=args.bs, shuffle=True)
+    val_loader = DataLoader(val_ds, batch_size=args.bs, shuffle=False)
 
-    engine = torchreid.engine.ImageTripletEngine(
-        datamanager,
-        model,
-        optimizer=optimizer,
-        scheduler=scheduler,
-        margin=0.3,  # by default 0.3
-        weight_t=1,  # weight for triplet loss
-        weight_x=50, # weight for softmax loss
-    )
-
-    engine.run(
-        save_dir=f"log/{args.name}",
-        max_epoch=args.epochs, 
-        eval_freq=args.eval_freq, 
-        print_freq=50,
-        test_only=False
-    )
-
+    # Train
+    train(args, train_loader, val_loader, extractor, classifier, criterion, optimizer)
     
 if __name__ == '__main__':
     args = get_parser()

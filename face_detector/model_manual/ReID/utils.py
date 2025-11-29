@@ -1,75 +1,44 @@
-import torchreid
 import os
 import glob
 import re
 import numpy as np
-import imgaug as iaa
+from imgaug import augmenters as iaa
 import cv2
 from ultralytics import YOLO
+import random
+from torchreid.reid.utils import FeatureExtractor
+import torch.nn as nn
+from torch.utils.data import Dataset
 
-yolo_model = YOLO("../../yolov8n.pt")
+class Classifier(nn.Module):
+    def __init__(self, num_class):
+        super().__init__()
+        self.num_class = num_class
+        self.fc = nn.Sequential(
+            nn.Linear(512, 128),
+            nn.ReLU(),
+            nn.Linear(128, num_class)         
+        )
 
-class NewDataset(torchreid.data.datasets.ImageDataset):
-    dataset_dir = ''
+    def forward(self, x):
+        return self.fc(x)
 
-    def __init__(self, path, root='', **kwargs):
-        self.train_dir = self.dataset_dir     
-        self.query_dir = self.dataset_dir
-        self.gallery_dir = self.dataset_dir
-        
-        train = self.process_dir(self.train_dir, isQuery=False)
-        query = self.process_dir(self.query_dir, isQuery=True)
-        gallery = self.process_dir(self.gallery_dir, isQuery=False)
+class ReIDDataset(Dataset):
+    def __init__(self, img_paths):
+        self.img_paths = img_paths
+        self.labels = []
+        for path in img_paths:
+            fname = os.path.basename(path)
+            m = re.search(r"p(\d+)", fname)
+            pid = int(m.group(1))
+            self.labels.append(pid)
 
-        super(NewDataset, self).__init__(train, query, gallery, **kwargs)
-        
-        
-    def process_dir(self, dir_path, isQuery, relabel=False):
-        img_paths = glob(os.join(dir_path, '*.jpg'))
-        
-        data = []
-        for img_path in img_paths:
+    def __len__(self):
+        return len(self.img_paths)
 
-            img_name = img_path.split('/')[-1]
-            name_splitted = img_name.split('_')
-            pid = int( name_splitted[1][1:] )
-            camid = int( name_splitted[0][1:] )
-
-            if isQuery:
-                camid += 10  # index starts from 0
-
-            data.append((img_path, pid, camid))
-
-        return data
+    def __getitem__(self, idx):
+        return self.img_paths[idx], self.labels[idx]
     
-    
-    def process_dir_market(self, dir_path, relabel=False):
-        img_paths = glob(os.join(dir_path, '*.jpg'))
-        pattern = re.compile(r'([-\d]+)_c(\d)')
-
-        pid_container = set()
-        for img_path in img_paths:
-            pid, _ = map(int, pattern.search(img_path).groups())
-            if pid == -1:
-                continue # junk images are just ignored
-            pid_container.add(pid)
-        pid2label = {pid: label for label, pid in enumerate(pid_container)}
-
-        data = []
-        for img_path in img_paths:
-            pid, camid = map(int, pattern.search(img_path).groups())
-            if pid == -1:
-                continue # junk images are just ignored
-            assert 0 <= pid <= 1501 # pid == 0 means background
-            assert 1 <= camid <= 6
-            camid -= 1 # index starts from 0
-            if relabel:
-                pid = pid2label[pid]
-            data.append((img_path, pid, camid))
-
-        return data
-    
-
 def augment_images(img, count):
     imgs = [img]
 
@@ -77,16 +46,12 @@ def augment_images(img, count):
         aug = iaa.Sequential([])
 
         rand_number = np.random.randint(0, 101)
-        if rand_number < 33:
-            aug.append(iaa.AdditiveGaussianNoise(loc=0, scale=(0.01*255, 0.08*255)))
-        elif rand_number < 70:
+        if rand_number < 70:
             aug.append(iaa.AverageBlur(k=(3, 3)))
 
         rand_number = np.random.randint(0, 101)
         if rand_number < 30:
-            aug.append(iaa.Multiply((0.7, 1.2)))
-        elif rand_number < 70:
-            aug.append(iaa.GammaContrast((1, 1.6)))            
+            aug.append(iaa.Multiply((0.7, 1.2)))           
             
         rand_number = np.random.randint(0, 101)
         if rand_number < 33:
@@ -97,8 +62,6 @@ def augment_images(img, count):
         rand_number = np.random.randint(0, 101)
         if rand_number < 33:
             aug.append(iaa.CoarseDropout(0.015, size_percent=0.1, per_channel=0.5))
-        elif rand_number < 66:
-            aug.append(iaa.SaltAndPepper(0.05, per_channel=True))
             
         rand_number = np.random.randint(0, 101)
         if rand_number < 50:
@@ -113,37 +76,106 @@ def augment_images(img, count):
     return imgs
 
 def create_data(args):
+    yolo_model = YOLO(args.yolo_path)
+    # Tạo folder ReID chuẩn
+    train_dir = os.path.join(args.save_path, "train")
+    validation_dir = os.path.join(args.save_path, "valid")
+    test_dir = os.path.join(args.save_path, "test")
+
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(validation_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
+
+    print("\nCreating ReID Classification dataset...")
     counter = 0
 
+    # Duyệt qua từng người (PID theo folder)
     for pid, person_folder in enumerate(sorted(os.listdir(args.videos_paths))):
         person_path = os.path.join(args.videos_paths, person_folder)
 
-        for video_path in sorted(glob(person_path + '/*')):
-            print(f'Preprocessing {video_path} video...')
+        person_images = []  # tất cả ảnh của 1 người
+
+        # Duyệt qua từng video của người đó
+        for video_path in sorted(glob.glob(person_path + '/*')):
+            print(f'Preprocessing {video_path}')
             cap = cv2.VideoCapture(video_path)
             frame_counter = 0
+
             while cap.isOpened():
                 ret, frame = cap.read()
                 frame_counter += 1
 
-                if frame_counter % args.skip_frames == 0:
-                    if ret:
-                        results = yolo_model(frame, imgsz=320, verbose=False) 
-                        result_pandas = results.pandas().xyxy[0]
-                        people = result_pandas[result_pandas['name'] == 'person'][['xmin','ymin','xmax','ymax']]
+                if not ret:
+                    break
 
-                        if len(people) == 0:
-                            continue
+                if frame_counter % args.skip_frames != 0:
+                    continue
 
-                        xyxy = people.to_numpy().astype(np.int32)[0]  # taking first person's bbox 
-                        person = frame[xyxy[1]:xyxy[3], xyxy[0]:xyxy[2]]  # cropping the person from the frame
-                        person = cv2.resize(person, (args.img_w, args.img_h))
+                results = yolo_model(frame, imgsz=320, conf=0.4, verbose=False)
+                detections = results[0].boxes
 
-                        images =  augment_images(person, count=args.aug_count)
-                        for image in images:
-                            counter += 1
-                            name = f'c0_p{pid}_{counter}.jpg'
-                            cv2.imwrite(f'{args.save_path}/{name}', image)
-                    else:
-                        break
-            print('Done!')
+                if len(detections) == 0:
+                    continue
+
+                for box in detections:
+                    cls = int(box.cls[0])
+                    if cls != 0:
+                        continue  # chỉ lấy người
+
+                    x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+                    person = frame[y1:y2, x1:x2]
+
+                    if person.size == 0:
+                        continue
+
+                    # Resize model input
+                    person = cv2.resize(person, (args.img_w, args.img_h))
+
+                    # Augmentation
+                    aug_images = augment_images(person, count=args.aug_count)
+
+                    for img in aug_images:
+                        person_images.append(img)
+
+        #  Phân chia Train / Valid / Test
+        if len(person_images) < 3:
+            print(f"[WARN] PID {pid+1} không đủ ảnh.")
+            continue
+
+        random.shuffle(person_images)
+
+        n = len(person_images)
+        n_valid = max(1, int(0.15 * n))
+        n_test = max(1, int(0.15 * n))
+        n_train = n - n_valid - n_test
+
+        train_imgs = person_images[:n_train]
+        valid_imgs = person_images[n_train:n_train + n_valid]
+        test_imgs = person_images[n_train + n_valid:]
+
+        # =============================
+        #  SAVE ẢNH
+        # =============================
+
+        def save_images(img_list, dest_dir, camid):
+            nonlocal counter
+            for img in img_list:
+                counter += 1
+                filename = f"c{camid}_p{pid+1}_{counter}.jpg"
+                cv2.imwrite(os.path.join(dest_dir, filename), img)
+
+        save_images(train_imgs, train_dir, camid=args.camid)
+        save_images(valid_imgs, validation_dir, camid=args.camid)
+        save_images(test_imgs, test_dir, camid=args.camid + 1)
+
+        print(f"PID {pid+1} → Train:{len(train_imgs)}, Query:{len(valid_imgs)}, Gallery:{len(test_imgs)}")
+
+    print("\nDataset creation completed!")
+
+def init_extractor(args, device):
+    extractor = FeatureExtractor(
+        model_name= args.name,
+        model_path=args.pretrained_model,
+        device=device
+    )
+    return extractor
