@@ -1,4 +1,4 @@
-#define BROKER_ADDR_URI "mqtt://10.54.117.6:1883"
+#define BROKER_ADDR_URI "mqtt://10.197.209.70:1884"
 #define WORKING_TOPIC "switch/status"
 
 #pragma once
