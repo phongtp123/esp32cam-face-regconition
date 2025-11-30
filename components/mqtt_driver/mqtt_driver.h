@@ -6,13 +6,13 @@
 
 #include "mqtt_client.h"
 
-typedef void (*mqtt_message_callback_t)(const char *topic, const char *data, int len);
+typedef void (*mqtt_message_callback_t)(const char *topic, int topic_len, const char *data, int data_len);
 
 
 
 void mqtt_init(void); 
 
-void mqtt_pub(char*, char*); 
+void mqtt_publish_json(const char*, int); 
 
 void mqtt_register_callback(mqtt_message_callback_t);
 

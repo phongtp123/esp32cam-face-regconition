@@ -1,0 +1,699 @@
+time:     Nov 23 2025 10ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xd (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004c0d6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1708
+load:0x403cc710,len:0x968
+load:0x403ce710,len:0x2f68
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 23 2025 10:02:27[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=259e0h (154080) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00035a08 vaddr=3fc90600 size=028bch ( 10428) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=000382cc vaddr=40380000 size=07d4ch ( 32076) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=ae810h (714768) map[0m
+[0;32mI (246) esp_image: segment 4: paddr=000ee838 vaddr=40387d4c size=0873ch ( 34620) load[0m
+[0;32mI (258) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (258) boot: Disabling RNG early entropy source...[0m
+[0;32mI (270) cpu_start: Unicore app[0m
+[0;32mI (270) cpu_start: Pro cpu up.[0m
+[0;32mI (278) cpu_start: Pro cpu start user code[0m
+[0;32mI (278) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (279) cpu_start: Application information:[0m
+[0;32mI (281) cpu_start: Project name:     led-control[0m
+[0;32mI (287) cpu_start: App version:      8e74fd6b-dirty[0m
+[0;32mI (292) cpu_start: Compile time:     Nov 23 2025 10:43:22[0m
+[0;32mI (298) cpu_start: ELF file SHA256:  8c7601866858e3ef...[0m
+[0;32mI (304) cpu_start: ESP-IDF:          v5.1-dirty[0m
+[0;32mI (310) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (314) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (319) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (324) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (331) heap_init: At 3FC97540 len 000451D0 (276 KiB): DRAM[0m
+[0;32mI (337) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (344) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM[0m
+[0;32mI (351) spi_flash: detected chip: generic[0m
+[0;32mI (355) spi_flash: flash io: dio[0m
+[0;33mW (359) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (372) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (379) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (386) app_start: Starting scheduler on CPU0[0m
+[0;32mI (391) main_task: Started on CPU0[0m
+[0;32mI (391) main_task: Calling app_main()[0m
+[0;32mI (401) pp: pp rom version: 9387209[0m
+[0;32mI (401) net80211: net80211 rom version: 9387209[0m
+[0;32mI (411) wifi:wifi driver task: 3fca0344, prio:23, stack:6656, core=0[0m
+[0;32mI (411) wifi:wifi firmware version: b2f1f86[0m
+[0;32mI (411) wifi:wifi certification version: v7.0[0m
+[0;32mI (421) wifi:config NVS flash: enabled[0m
+[0;32mI (421) wifi:config nano formating: disabled[0m
+[0;32mI (421) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (431) wifi:Init management frame dynamic rx buffer num: 32[0m
+[0;32mI (431) wifi:Init management short buffer num: 32[0m
+[0;32mI (441) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (441) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (451) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (451) wifi:Init static rx buffer num: 10[0m
+[0;32mI (451) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (461) wifi_init: rx ba win: 6[0m
+[0;32mI (461) wifi_init: tcpip mbox: 32[0m
+[0;32mI (471) wifi_init: udp mbox: 6[0m
+[0;32mI (471) wifi_init: tcp mbox: 6[0m
+[0;32mI (471) wifi_init: tcp tx win: 5744[0m
+[0;32mI (481) wifi_init: tcp rx win: 5744[0m
+[0;32mI (481) wifi_init: tcp mss: 1440[0m
+[0;32mI (491) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (491) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (501) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+[0;32mI (541) wifi:mode : sta (8c:d0:b2:a8:5f:79)[0m
+[0;32mI (541) wifi:enable tsf[0m
+[0;32mI (541) wifi:Set ps type: 0[0m
+
+[0;32mI (541) WIFI_DRIVER: wifi_station_initialize finished. Connecting to SSID:Tung[0m
+[0;32mI (551) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (551) wifi:state: init -> auth (b0)[0m
+[0;32mI (561) wifi:state: auth -> init (1c0)[0m
+[0;32mI (561) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (571) WIFI_DRIVER: Retrying to connect to the AP...[0m
+[0;32mI (2971) WIFI_DRIVER: Retrying to connect to the AP...[0m
+[0;32mI (2981) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (2981) wifi:state: init -> auth (b0)[0m
+[0;32mI (2981) wifi:state: auth -> assoc (0)[0m
+[0;32mI (2991) wifi:state: assoc -> run (10)[0m
+[0;32mI (3011) wifi:connected with Tung, aid = 1, channel 6, BW20, bssid = ee:3b:ce:db:be:18[0m
+[0;32mI (3011) wifi:security: WPA2-PSK, phy: bg, rssi: -62[0m
+[0;32mI (3011) wifi:pm start, type: 0[0m
+
+[0;32mI (3011) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3071) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4021) esp_netif_handlers: sta ip: 10.54.117.142, mask: 255.255.255.0, gw: 10.54.117.39[0m
+[0;32mI (4021) WIFI_DRIVER: Got IP: 10.54.117.142[0m
+[0;32mI (4021) WIFI_DRIVER: Connected to AP SSID:Tung password:12345678[0m
+[0;32mI (4031) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (4031) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (4041) LED_TEST_DRIVER: INIT THÀNH CÔNG[0m
+[0;32mI (4051) LED_TEST_DRIVER: LED 1 SÁNG[0m
+[0;32mI (9051) MQTT CLIENT: init MQTT successfully[0m
+[0;32mI (9051) MQTT CLIENT: register MQTT event handler successfully[0m
+[0;32mI (9051) MQTT CLIENT: start MQTT successfully[0m
+[0;32mI (9051) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9061) LIGHT_DRIVER: INIT THÀNH CÔNG[0m
+[0;32mI (9071) MQTT CLIENT: MQTT connected[0m
+[0;32mI (9071) LED_TEST_DRIVER: LED 2 SÁNG[0m
+[0;32mI (9081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (9311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (9311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (9321) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (9321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (9331) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (14081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (14301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (14311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (14311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (14311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (14321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (19081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (19301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (19311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (19311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (19311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (19321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (24081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (24311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (24311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (24311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (24311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (24321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (29081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (29311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (29311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (29311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (29311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (29321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (34081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (34311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (34311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (34311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (34311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (34321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (39081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (39311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (39311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (39311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (39321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (39321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (44081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (44301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (44311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (44311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (44311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (44321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (49081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (49311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (49311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (49311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (49311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (49321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (54081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (54311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (54311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (54311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (54311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (54321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (59081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (59311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (59311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (59311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (59321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (59321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (64081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (64311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (64311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (64311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (64321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (64321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (69081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (69311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (69311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (69321) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (69321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (69331) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (74081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (74311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (74311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (74311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (74311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (74321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (79081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (79311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (79311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (79311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (79311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (79321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (84081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (84311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (84311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (84311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (84311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (84321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (89081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (89311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (89311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (89311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (89321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (89321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (94081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (94301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (94311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (94311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (94311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (94321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (99081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (99311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (99311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (99311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (99321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (99321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (104081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (104311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (104311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (104311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (104321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (104321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (109081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (109301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (109301) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (109311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (109311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (109321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (114081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (114301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (114311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (114311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (114311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (114321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (119081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (119311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (119311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (119321) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (119321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (119331) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (124081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (124311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (124311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (124311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (124321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (124321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (129081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (129311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (129311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (129311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (129321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (129321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (134081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (134311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (134311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (134311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (134311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (134321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (139081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (139311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (139311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (139311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (139311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (139321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (144081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (144311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (144311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (144311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (144311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (144321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (149081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (149311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (149311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (149311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (149321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (149321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (154081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (154311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (154311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (154311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (154321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (154321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (159081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (159311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (159311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (159311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (159311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (159321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (164081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (164301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (164311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (164311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (164311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (164321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (169081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (169311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (169311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (169311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (169311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (169321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (174081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (174311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (174311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (174311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (174321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (174321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (179081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (179311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (179311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (179311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (179321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (179321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (184081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (184311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (184311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (184311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (184321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (184321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (189081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (189311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (189311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (189311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (189311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (189321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (194081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (194341) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (194341) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (194341) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (194351) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (194351) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (199081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (199311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (199311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (199311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (199311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (199321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (204081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (204311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (204311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (204311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (204321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (204321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (209081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (209311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (209311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (209311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (209321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (209321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (214081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (214311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (214311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (214311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (214321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (214321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (219081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (219351) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (219351) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (219351) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (219361) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (219361) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (224081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (224301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (224311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (224311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (224311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (224321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (229081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (229311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (229311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (229311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (229311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (229321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (234081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (234311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (234311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (234311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (234321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (234321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (239081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (239311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (239311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (239311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (239321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (239321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (244081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (244311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (244311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (244311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (244311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (244321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (249081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (251941) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (251941) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (251951) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (251951) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (251951) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (254081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (254311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (254311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (254311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (254321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (254321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (259081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (259301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (259311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (259311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (259311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (259321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (264081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (264311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (264311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (264311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (264321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (264321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (269081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (269311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (269311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (269311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (269321) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (269321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (274081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (274301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (274301) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (274311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (274311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (274321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (279081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (279311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (279311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (279311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (279311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (279321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (284081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (284301) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":0}
+[0;32mI (284301) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (284311) LIGHT_DRIVER: Data  = '{"switch":0}'[0m
+[0;32mI (284311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (284321) LIGHT_DRIVER: ĐÈN TẮT[0m
+[0;32mI (289081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (289311) MQTT CLIENT: received message:
+[0m
+Topic: switch/status
+Data: {"switch":1}
+[0;32mI (289311) LIGHT_DRIVER: Topic = 'switch/status'[0m
+[0;32mI (289311) LIGHT_DRIVER: Data  = '{"switch":1}'[0m
+[0;32mI (289311) LIGHT_DRIVER: Đúng topic[0m
+[0;32mI (289321) LIGHT_DRIVER: ĐÈN SÁNG[0m
+[0;32mI (294081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (299081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (304081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (309081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (314081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (319081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (324081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (329081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (334081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (339081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (344081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (349081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (354081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (359081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (364081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (369081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (374081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (379081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (384081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (389081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (394081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (399081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (404081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (409081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (414081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (419081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (424081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (429081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (434081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (439081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (444081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (449081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (454081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (459081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (464081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (469081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (474081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (479081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (484081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (489081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (494081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (499081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (504081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (509081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (514081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (519081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (524081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (529081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (534081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (539081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;31mE (541271) transport_base: tcp_read error, errno=Socket is not connected[0m
+[0;31mE (541281) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=128[0m
+[0;31mE (541281) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -1[0m
+[0;32mI (544081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (549081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (554081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (556381) MQTT CLIENT: MQTT connected[0m
+[0;32mI (556381) LED_TEST_DRIVER: LED 2 SÁNG[0m
+[0;32mI (559081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (564081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (569081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (574081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (579081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (584081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (589081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (594081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (599081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (604081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (609081) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (614081) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (619081) MQTT CLIENT: publish status: 1 to topic /server/led[0m

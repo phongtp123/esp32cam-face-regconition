@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "mqtt_driver.h"
 #include "led_test_driver.h"
+#include "cJSON.h"
 
 static const char *TAG = "MQTT CLIENT";
 
@@ -55,7 +56,7 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
             printf("Data: %.*s\n", event->data_len, event->data); 
 
             if (mqtt_cb) {
-                mqtt_cb(event->topic, event->data, event->data_len); 
+                mqtt_cb(event->topic, event->topic_len, event->data, event->data_len); 
             }
 
             break; 
@@ -75,8 +76,21 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 }
 
 
-void mqtt_pub(char *topic, char *msg) {
-    esp_mqtt_client_publish(client, topic, msg, 0, 1, 1); 
+
+// publish json len mqtt topic 
+void mqtt_publish_json(const char *topic, int status)
+{
+    cJSON *root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(root, "status", status);
+
+    char *json_str = cJSON_PrintUnformatted(root);
+
+    esp_mqtt_client_publish(client, topic, json_str, 0, 1, 1);
+
+    ESP_LOGI(TAG, "publish status: %d to topic %s", status, topic); 
+
+    free(json_str);
+    cJSON_Delete(root);
 }
 
 

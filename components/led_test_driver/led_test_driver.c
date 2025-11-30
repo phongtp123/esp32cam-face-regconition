@@ -3,7 +3,7 @@
 #include <string.h>
 #include "led_test_driver.h"
 
-static const char *TAG = "LED_DRIVER"; 
+static const char *TAG = "LED_TEST_DRIVER"; 
 
 #define LED_TEST_1 GPIO_NUM_0
 #define LED_TEST_2 GPIO_NUM_1
@@ -19,22 +19,22 @@ void led_test_init(void) {
 
 void led1_on(void) {
     gpio_set_level(LED_TEST_1, 1);
-    ESP_LOGI(TAG, "SÁNG");
+    ESP_LOGI(TAG, "LED 1 SÁNG");
 }
 
 void led1_off(void) {
     gpio_set_level(LED_TEST_1, 0);
-    ESP_LOGI(TAG, "TẮT"); 
+    ESP_LOGI(TAG, "LED 1 TẮT"); 
 }
 
 void led2_on(void) {
     gpio_set_level(LED_TEST_2, 1);
-    ESP_LOGI(TAG, "SÁNG");
+    ESP_LOGI(TAG, "LED 2 SÁNG");
 }
 
 void led2_off(void) {
     gpio_set_level(LED_TEST_2, 0);
-    ESP_LOGI(TAG, "TẮT"); 
+    ESP_LOGI(TAG, "LED 2 TẮT"); 
 }
 
 

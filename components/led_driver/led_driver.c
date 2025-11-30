@@ -3,8 +3,9 @@
 #include "mqtt_driver.h"
 #include <string.h>
 #include "led_driver.h"
+#include "cJSON.h"
 
-static const char *TAG = "LED_DRIVER"; 
+static const char *TAG = "LIGHT_DRIVER"; 
 
 
 
@@ -16,36 +17,54 @@ static void led_init(void) {
 
 static void led_on(void) {
     gpio_set_level(LED_PIN, 1);
-    ESP_LOGI(TAG, "SÁNG");
+    ESP_LOGI(TAG, "ĐÈN SÁNG");
 }
 
 static void led_off(void) {
     gpio_set_level(LED_PIN, 0);
-    ESP_LOGI(TAG, "TẮT"); 
+    ESP_LOGI(TAG, "ĐÈN TẮT"); 
 }
 
 
 
 // đây là hàm điều khiển led 
-static void led_mqtt_callback(const char *topic, const char *data, int len) 
+static void led_mqtt_callback(const char *topic, int topic_len, const char *data, int data_len)
 {
-    ESP_LOGI(TAG, "Callback LED, topic='%s', raw data='%.*s'", topic, len, data);
+    ESP_LOGI(TAG, "Topic = '%.*s'", topic_len, topic);
+    ESP_LOGI(TAG, "Data  = '%.*s'", data_len, data);
 
-    if (strcmp(topic, WORKING_TOPIC) != 0)
+    // So sánh topic chuẩn
+    if (strncmp(topic, WORKING_TOPIC, topic_len) != 0 ||
+        topic_len != strlen(WORKING_TOPIC))
+    {
+        ESP_LOGW(TAG, "Topic không khớp!");
         return;
-
-    // CHUYỂN MQTT PAYLOAD → CHUỖI C
-    char buf[32];
-    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
-    memcpy(buf, data, len);
-    buf[len] = '\0';
-
-    if (strcmp(buf, "1") == 0) {
-        led_on();
-    } else {
-        led_off();
     }
+
+
+    ESP_LOGI(TAG, "Đúng topic"); 
+    // Parse JSON
+    cJSON *root = cJSON_ParseWithLength(data, data_len);
+    if (!root) {
+        ESP_LOGE(TAG, "JSON parse error!");
+        return;
+    }
+
+    cJSON *switch_p = cJSON_GetObjectItem(root, "switch");
+
+    if (cJSON_IsNumber(switch_p)) {
+        if (switch_p->valueint == 1) {
+            led_on();
+        } else {
+            led_off();
+        }
+    } else {
+        ESP_LOGE(TAG, "No 'status' field in JSON!");
+    }
+
+    cJSON_Delete(root);
 }
+
 
 
 

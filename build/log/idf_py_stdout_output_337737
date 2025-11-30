@@ -1,0 +1,143 @@
+[0;32mI (289) cpu_start: App version:      8e74fd6b-dirty[0m
+[0;32mI (294) cpu_start: Compile time:     Nov 23 2025 10:12:14[0m
+[0ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xd (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004c0d4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1708
+load:0x403cc710,len:0x968
+load:0x403ce710,len:0x2f68
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 23 2025 10:02:27[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=25998h (154008) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=000359c0 vaddr=3fc90600 size=028bch ( 10428) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00038284 vaddr=40380000 size=07d94h ( 32148) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=ae7b0h (714672) map[0m
+[0;32mI (246) esp_image: segment 4: paddr=000ee7d8 vaddr=40387d94 size=086f4h ( 34548) load[0m
+[0;32mI (258) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (258) boot: Disabling RNG early entropy source...[0m
+[0;32mI (270) cpu_start: Unicore app[0m
+[0;32mI (270) cpu_start: Pro cpu up.[0m
+[0;32mI (278) cpu_start: Pro cpu start user code[0m
+[0;32mI (278) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (279) cpu_start: Application information:[0m
+[0;32mI (281) cpu_start: Project name:     led-control[0m
+[0;32mI (287) cpu_start: App version:      8e74fd6b-dirty[0m
+[0;32mI (292) cpu_start: Compile time:     Nov 23 2025 10:12:14[0m
+[0;32mI (298) cpu_start: ELF file SHA256:  9f8af497a175a986...[0m
+[0;32mI (304) cpu_start: ESP-IDF:          v5.1-dirty[0m
+[0;32mI (310) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (314) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (319) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (324) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (331) heap_init: At 3FC97540 len 000451D0 (276 KiB): DRAM[0m
+[0;32mI (337) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (344) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM[0m
+[0;32mI (351) spi_flash: detected chip: generic[0m
+[0;32mI (355) spi_flash: flash io: dio[0m
+[0;33mW (359) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (372) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (379) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (386) app_start: Starting scheduler on CPU0[0m
+[0;32mI (391) main_task: Started on CPU0[0m
+[0;32mI (391) main_task: Calling app_main()[0m
+[0;32mI (401) pp: pp rom version: 9387209[0m
+[0;32mI (401) net80211: net80211 rom version: 9387209[0m
+[0;32mI (411) wifi:wifi driver task: 3fca0344, prio:23, stack:6656, core=0[0m
+[0;32mI (411) wifi:wifi firmware version: b2f1f86[0m
+[0;32mI (411) wifi:wifi certification version: v7.0[0m
+[0;32mI (421) wifi:config NVS flash: enabled[0m
+[0;32mI (421) wifi:config nano formating: disabled[0m
+[0;32mI (421) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (431) wifi:Init management frame dynamic rx buffer num: 32[0m
+[0;32mI (431) wifi:Init management short buffer num: 32[0m
+[0;32mI (441) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (441) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (451) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (451) wifi:Init static rx buffer num: 10[0m
+[0;32mI (451) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (461) wifi_init: rx ba win: 6[0m
+[0;32mI (461) wifi_init: tcpip mbox: 32[0m
+[0;32mI (471) wifi_init: udp mbox: 6[0m
+[0;32mI (471) wifi_init: tcp mbox: 6[0m
+[0;32mI (471) wifi_init: tcp tx win: 5744[0m
+[0;32mI (481) wifi_init: tcp rx win: 5744[0m
+[0;32mI (481) wifi_init: tcp mss: 1440[0m
+[0;32mI (491) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (491) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (501) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+[0;32mI (541) wifi:mode : sta (8c:d0:b2:a8:5f:79)[0m
+[0;32mI (541) wifi:enable tsf[0m
+[0;32mI (541) wifi:Set ps type: 0[0m
+
+[0;32mI (541) WIFI_DRIVER: wifi_station_initialize finished. Connecting to SSID:Tung[0m
+[0;32mI (551) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (551) wifi:state: init -> auth (b0)[0m
+[0;32mI (561) wifi:state: auth -> init (1c0)[0m
+[0;32mI (561) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (571) WIFI_DRIVER: Retrying to connect to the AP...[0m
+[0;32mI (2971) WIFI_DRIVER: Retrying to connect to the AP...[0m
+[0;32mI (2981) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (2981) wifi:state: init -> auth (b0)[0m
+[0;32mI (3051) wifi:state: auth -> assoc (0)[0m
+[0;32mI (3061) wifi:state: assoc -> run (10)[0m
+[0;32mI (3101) wifi:connected with Tung, aid = 1, channel 6, BW20, bssid = ee:3b:ce:db:be:18[0m
+[0;32mI (3101) wifi:security: WPA2-PSK, phy: bg, rssi: -59[0m
+[0;32mI (3101) wifi:pm start, type: 0[0m
+
+[0;32mI (3101) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3171) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4111) esp_netif_handlers: sta ip: 10.54.117.142, mask: 255.255.255.0, gw: 10.54.117.39[0m
+[0;32mI (4111) WIFI_DRIVER: Got IP: 10.54.117.142[0m
+[0;32mI (4111) WIFI_DRIVER: Connected to AP SSID:Tung password:12345678[0m
+[0;32mI (4121) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (4121) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (4131) LED_TEST_DRIVER: INIT THÀNH CÔNG[0m
+[0;32mI (4141) LED_TEST_DRIVER: LED 1 SÁNG[0m
+[0;32mI (9141) MQTT CLIENT: init MQTT successfully[0m
+[0;32mI (9141) MQTT CLIENT: register MQTT event handler successfully[0m
+[0;32mI (9141) MQTT CLIENT: start MQTT successfully[0m
+[0;32mI (9141) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9151) LIGHT_DRIVER: INIT THÀNH CÔNG[0m
+[0;32mI (9231) MQTT CLIENT: MQTT connected[0m
+[0;32mI (9231) LED_TEST_DRIVER: LED 2 SÁNG[0m
+[0;32mI (9241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (14241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (19241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (24241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (29241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (34241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (39241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (44241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (49241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (54241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (59241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (64241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (69241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (74241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (79241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (84241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (89241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (94241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (99241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (104241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (109241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (114241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (119241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (124241) MQTT CLIENT: publish status: 0 to topic /server/led[0m
+[0;32mI (129241) MQTT CLIENT: publish status: 1 to topic /server/led[0m
+[0;32mI (134241) MQTT CLIENT: publish status: 0 to topic /server/led[0m

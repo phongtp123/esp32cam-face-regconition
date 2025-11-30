@@ -4,6 +4,8 @@
 #include "mqtt_driver.h"
 #include "led_driver.h"
 
+#define TOPIC "/server/led"
+
 static const char *TAG = "LED CONTROL"; 
 
 void app_main(void)

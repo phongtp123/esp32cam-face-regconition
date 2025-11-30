@@ -1,0 +1,24 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4004c0d4: [0;33musb_uart_rx_one_char_block[0m[0m in [0;32mROM[0m
+[0m--- 0x4200cdbd: [0;33mwifi_start[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/components/wifi_driver/wifi_driver.c[0m[0m:[1;31m135[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x403806f2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x40386bb4: [0;33m__ubsan_include[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m313[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x40048b82: [0;33mets_secure_boot_verify_bootloader_with_keys[0m[0m in [0;32mROM[0m
+[0m--- 0x4200cdbd: [0;33mwifi_start[0m[0m at [0;32m/home/r_and_tung/esp32cam-face-regconition/components/wifi_driver/wifi_driver.c[0m[0m:[1;31m135[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x403806f2: [0;33mpanic_abort[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m452[0m
+[0m--- 0x40386bb4: [0;33m__ubsan_include[0m[0m at [0;32m/home/r_and_tung/esp/esp-idf/components/esp_system/ubsan.c[0m[0m:[1;31m313[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x40048b82: [0;33mets_secure_boot_verify_bootloader_with_keys[0m[0m in [0;32mROM[0m
+[0m
