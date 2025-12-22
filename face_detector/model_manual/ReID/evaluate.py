@@ -18,7 +18,7 @@ def get_parser():
     parser.add_argument('--save_path', type=str, default='path/to/save', help="path to save data")
     parser.add_argument('--pretrained_model', type=str, default='path/to/pretrained_model', help="path to ReID pretrained model")
     parser.add_argument('--classifier_path', type=str, default='path/to/pretrained_classifier', help="path to pretrained classifier")
-    parser.add_argument('--nc', type=int, default=2, help="number of classes")
+    parser.add_argument('--nc', type=int, default=3, help="number of classes")
         
     args = parser.parse_args()
     

@@ -15,14 +15,14 @@ def get_parser():
 
     parser.add_argument('--save_path', type=str, default='path/to/saved', help="path to saved data")
     parser.add_argument('--name', type=str, default='osnet_x1_0', help="ReID model name")
-    parser.add_argument('--bs', type=int, default=32, help="batch size")
+    parser.add_argument('--bs', type=int, default=128, help="batch size")
     parser.add_argument('--lr', type=float, default=0.003, help="learning rate")
-    parser.add_argument('--epochs', type=int, default=10, help="epoch count for the training loop")
+    parser.add_argument('--epochs', type=int, default=5, help="epoch count for the training loop")
     parser.add_argument('--pretrained_model', type=str, default='path/to/pretrained_model', help="path to ReID pretrained model")
     parser.add_argument('--classifier_path', type=str, default='path/to/pretrained_classifier', help="path to save classifier")
     parser.add_argument('--classifier_name', type=str, default='best_model.pth', help="name of the classifier")
-    parser.add_argument('--nc', type=int, default=2, help="number of classes")
-    parser.add_argument('--log_freq', type=int, default=2, help="logging after num epochs")
+    parser.add_argument('--nc', type=int, default=3, help="number of classes")
+    parser.add_argument('--log_freq', type=int, default=1, help="logging after num epochs")
         
     args = parser.parse_args()
     
@@ -34,7 +34,7 @@ def main(args):
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     classifier = Classifier(num_class=args.nc).to(device)
     extractor = init_extractor(args, device)
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
     optimizer = optim.Adam(classifier.parameters(), lr=args.lr)
 
     # Make Dataset

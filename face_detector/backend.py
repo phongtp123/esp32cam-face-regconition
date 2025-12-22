@@ -4,7 +4,7 @@ import time
 import os
 import threading
 import numpy as np
-from appUtils import non_max_suppression_fast, predict_batch, init_full_engine, init_nonid_engine, ESP32_STREAM_URL, init_log_queue, push_log
+from appUtils import non_max_suppression_fast, predict_batch, init_full_engine, init_nonid_engine, ESP32_STREAM_URL, init_log_queue, push_log, TrendWindow, analyze_trend, same_person
 from mqtt import init_mqtt
 import requests
 
@@ -16,7 +16,16 @@ VIDEO_DIR = "data/videos"
 
 is_offline=True
 attempt_no_person=0
-attempt_stranger=0
+attempt_person = 0
+HUMAN_ON_THRESHOLD = 10
+HUMAN_OFF_THRESHOLD = 120
+LID_NEW_T = 1.5
+LID_REAPPEAR_T = 0.7
+MAX_LID_TRACK_T = 2.0
+FAMILIER_ATTEMPT_THRESHOLD = 5
+STRANGER_ATTEMPT_THRESHOLD = 60
+NUM_PERSON_INIT = 1
+REID_INTERVAL = 5
 
 # is_recording=False
 # video_writer=None
@@ -74,16 +83,20 @@ def generate_no_motion_frame(width=320, height=240):
 def StrictID_Mode():
 
     extractor, classifier, model, tracker_manager, device, flags = init_full_engine(
-        nc=2,
-        classifier_path="model_manual/ReID/log/osnet_x1_0/model/best_model_2.pth",
-        reid_model_name="osnet_x1_0",
-        reid_pretrained_path="model_manual/ReID/log/osnet_x1_0/model/osnet_x1_0_imagenet.pth",
+        nc=3,
+        classifier_path="model_manual/ReID/log/osnet_x1_0/model/osnetainx10_extractor.pth",
+        reid_model_name="osnet_ain_x1_0",
+        reid_pretrained_path="model_manual/ReID/log/osnet_x1_0/model/osnet_ain_x1_0_imagenet.pth",
         yolo_path="yolov8n.pt"
     )
 
-    global is_offline, attempt_no_person, attempt_stranger
+    global is_offline, attempt_no_person, attempt_person
     # global video_writer, is_recording
     print_once = False
+    attempt_stranger=0
+    attempt_familier=0
+    frame_id = 0
+    reid_cache = {}
 
     while True:
         ok = True
@@ -125,6 +138,7 @@ def StrictID_Mode():
 
                 # ===== nếu motion inactive: gửi frame no-motion =====
                 if not motion_active.is_set():
+                    frame_id = 0
                     frame = generate_no_motion_frame()
                     _, buffer = cv.imencode('.jpg', frame)
                     yield (b'--frame\r\n'
@@ -143,6 +157,7 @@ def StrictID_Mode():
                 jpg = bytes_data[a:b+2]
                 bytes_data = bytes_data[b+2:]
 
+                frame_id += 1
                 frame = cv.imdecode(np.frombuffer(jpg, np.uint8), cv.IMREAD_COLOR)
                 frame = cv.resize(frame, (320, 240))
 
@@ -155,18 +170,17 @@ def StrictID_Mode():
                 true_det_boxes = []
                 found_familiar = False   # reset mỗi frame
 
-                if len(detections) > 0:
+                for box in detections:
+                    cls = int(box.cls[0])
+                    conf = float(box.conf[0])
+                    if cls != 0:
+                        continue
+                    x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+                    det_boxes.append([x1, y1, x2, y2])
+                    scores.append(conf)
+
+                if len(det_boxes) > 0:
                     attempt_no_person = 0
-
-                    for box in detections:
-                        cls = int(box.cls[0])
-                        conf = float(box.conf[0])
-                        if cls != 0:
-                            continue
-                        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
-                        det_boxes.append([x1, y1, x2, y2])
-                        scores.append(conf)
-
                     # ===== NMS =====
                     keep = non_max_suppression_fast(det_boxes, scores)
                     for i in keep:
@@ -179,52 +193,69 @@ def StrictID_Mode():
                     for tr in tracks:
                         x1,y1,x2,y2 = map(int, tr["box"])
                         crop = frame[y1:y2, x1:x2]
+                        crop = cv.resize(crop, (256, 128))
                         crop_bboxs.append(crop)
 
-                    if len(crop_bboxs) > 0:
+                    if frame_id % REID_INTERVAL == 0 and len(crop_bboxs) > 0:
                         classes, confs = predict_batch(crop_bboxs, extractor, classifier, device)
-
-                    # ===== Draw + logic =====
-                    for idx, tr in enumerate(tracks):
+                        for idx, tr in enumerate(tracks):
+                            tid = tr["id"]
+                            reid_cache[tid] = (classes[idx], confs[idx])
+                        # ===== Draw + logic =====
+                    for tr in tracks:
                         x1,y1,x2,y2 = map(int, tr["box"])
+                        tid = tr["id"]
+                        if tid in reid_cache:
+                            classes, conf = reid_cache[tid]
+                        else:
+                            classes, conf = -1, 0.0
 
-                        if classes[idx] == 1:
+                        color = (0,255,0) if classes in (1,2) else (0,0,255)
+
+                        if classes == 1:
                             found_familiar = True
-                            person_name = "phong"
+                            person_name = "PHONG"
+                            cv.putText(frame, f"{person_name} {conf:.2f}",
+                                    (x1, y1-5), cv.FONT_HERSHEY_DUPLEX,
+                                    0.5, color, 2)
+                        
+                        if classes == 2:
+                            found_familiar = True
+                            person_name = "TUNG"
+                            cv.putText(frame, f"{person_name} {conf:.2f}",
+                                    (x1, y1-5), cv.FONT_HERSHEY_DUPLEX,
+                                    0.5, color, 2)
 
-                        color = (0,255,0) if classes[idx] == 1 else (0,0,255)
-                        cv.rectangle(frame, (x1,y1), (x2,y2), color, 2)
-
-                        if classes[idx] == 1:
-                            cv.putText(frame, f"{person_name} {confs[idx]:.2f}",
-                                       (x1, y1-5), cv.FONT_HERSHEY_SIMPLEX,
-                                       0.5, color, 1)
+                        cv.rectangle(frame, (x1,y1), (x2,y2), color, 2)                            
 
                     # ===== LED logic =====
                     if found_familiar:
-                        attempt_stranger = 0
-                        if is_offline:
+                        attempt_familier += 1
+                        if is_offline and attempt_familier >= FAMILIER_ATTEMPT_THRESHOLD:
                             print("[INFO] Familiar detected -> LED ON")
                             client.publish(TOPIC_LED, '{"status":1}', qos=1)
                             is_offline = False
+                        attempt_stranger = 0
                     else:
                         attempt_stranger += 1
-                        if attempt_stranger >= 60:
-                            if not is_offline:
-                                print("[INFO] No familiar for 3 sec -> LED OFF")
-                                client.publish(TOPIC_LED, '{"status":0}', qos=1)
-                                is_offline = True
+                        if attempt_stranger >= STRANGER_ATTEMPT_THRESHOLD and not is_offline:
+                            print("[INFO] No familiar for 3 sec -> LED OFF")
+                            client.publish(TOPIC_LED, '{"status":0}', qos=1)
+                            is_offline = True
                             attempt_stranger = 0
 
                 else:
                     # ===== Không có người =====
                     attempt_no_person += 1
-                    if attempt_no_person >= 60:
-                        if not is_offline:
-                            print("[INFO] No human for 3 sec -> LED OFF")
-                            client.publish(TOPIC_LED, '{"status":0}', qos=1)
-                            is_offline = True
+                    if attempt_no_person >= 10 and not is_offline:
+                        print("[INFO] No human for 3 sec -> LED OFF")
+                        client.publish(TOPIC_LED, '{"status":0}', qos=1)
+                        is_offline = True
                         attempt_no_person = 0
+
+                for tid in list(reid_cache.keys()):
+                    if tid not in [tr["id"] for tr in tracks]:
+                        reid_cache.pop(tid, None)
 
                 # ===== trả frame ra HTTP server =====
                 _, buffer = cv.imencode('.jpg', frame)
@@ -238,9 +269,14 @@ def StrictID_Mode():
             
 def Non_StrictID_Mode():
 
-    global is_offline, attempt_no_person, attempt_stranger
+    global is_offline, attempt_no_person, attempt_person
     # global video_writer, is_recording
     print_once = False
+    size_windows = {}
+    logical_tracks = {}
+    tracker_to_logical = {}
+    logical_id_counter = 0
+    person_counter = NUM_PERSON_INIT
 
     model, tracker_manager, flags = init_nonid_engine(
         yolo_path="yolov8n.pt"
@@ -321,58 +357,140 @@ def Non_StrictID_Mode():
                     # if video_writer is not None:
                     #     video_writer.write(frame)
 
-                    results = model(frame, imgsz=320, conf=0.4, verbose=False)
+                    results = model(frame, imgsz=320, conf=0.4, iou=0.5, verbose=False)
                     detections = results[0].boxes
                     det_boxes = []
                     scores = []
                     true_det_boxes = []
 
-                    if len(detections) > 0:
+                    for box in detections:
+                        cls = int(box.cls[0])
+                        conf = float(box.conf[0])
 
-                        if is_offline:
-                            print("[INFO] Human detected — Turning LED ON.")
+                        if cls != 0:
+                            continue
+
+                        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+                        det_boxes.append([x1, y1, x2, y2])
+                        scores.append(conf)
+
+                    if len(det_boxes) > 0:
+                        attempt_person += 1
+                        if attempt_person >= HUMAN_ON_THRESHOLD and person_counter >= 1 and is_offline:
+                            print("Someone inside. Turning LED ON")
                             client.publish(TOPIC_LED, '{"status":1}', qos=1)
                             is_offline = False
                         attempt_no_person = 0  # reset counter
-
-                        for box in detections:
-                            cls = int(box.cls[0])
-                            conf = float(box.conf[0])
-
-                            if cls != 0:
-                                continue
-
-                            x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
-                            det_boxes.append([x1, y1, x2, y2])
-                            scores.append(conf)
-
                         keep = non_max_suppression_fast(det_boxes, scores)
 
                         for i in keep:
                             true_det_boxes.append(det_boxes[i])
 
                         tracks = tracker_manager.update(true_det_boxes)
+                        aliased_tracks = []
+                        now = time.time()
                         for tr in tracks:
+                            tid = tr["id"]
+                            box = tr["box"]
+
+                            # Nếu tracker ID đã có logical ID
+                            if tid in tracker_to_logical:
+                                lid = tracker_to_logical[tid]
+                                logical_tracks[lid]["last_box"] = box
+                                logical_tracks[lid]["last_time"] = now
+
+                            else:
+                                # thử ghép với logical ID cũ (track đã mất)
+                                matched_lid = None
+                                for lid, info in logical_tracks.items():
+                                    time_gap = now - info["last_time"]
+                                    if time_gap >= LID_NEW_T:
+                                        continue
+                                    if time_gap <= LID_REAPPEAR_T:
+                                        if same_person(info["last_box"], box, time_gap):
+                                            matched_lid = lid
+                                            break
+
+                                if matched_lid is not None:
+                                    tracker_to_logical[tid] = matched_lid
+                                    logical_tracks[matched_lid]["last_box"] = box
+                                    logical_tracks[matched_lid]["last_time"] = now
+                                else:
+                                    # tạo logical ID mới
+                                    logical_id_counter += 1
+                                    lid = logical_id_counter
+                                    tracker_to_logical[tid] = lid
+                                    logical_tracks[lid] = {
+                                        "last_box": box,
+                                        "last_time": now
+                                    }
+                                    size_windows[lid] = TrendWindow()
+
+                            aliased_tracks.append({
+                                "logical_id": tracker_to_logical[tid],
+                                "tracker_id": tid,
+                                "box": box
+                            })
+                        for tr in aliased_tracks:
+                            lid = tr["logical_id"]
                             x1,y1,x2,y2 = tr["box"]
-                            
                             x1 = max(0, min(frame.shape[1]-1, int(x1)))
                             y1 = max(0, min(frame.shape[0]-1, int(y1)))
                             x2 = max(0, min(frame.shape[1]-1, int(x2)))
                             y2 = max(0, min(frame.shape[0]-1, int(y2)))
-
+                            cx = int((x2 + x1) / 2)
+                            # area = abs(x2 - x1) * abs(y2 - y1)
+                            if lid not in size_windows:
+                                size_windows[lid] = TrendWindow()
+                            win = size_windows[lid]
+                            if win.start_time is None:
+                                win.start_time = now
+                            win.cx.append(cx)
+                            trend = analyze_trend(win.cx)
+                            if trend != "UNKNOWN":
+                                if trend == "IN":
+                                    person_counter += 1
+                                    print(f"WALK {trend}")
+                                    print(f"counter: {person_counter}")
+                                else:
+                                    person_counter -= 1
+                                    print(f"WALK {trend}")
+                                    print(f"counter: {person_counter}")
+                                win.reset() 
+                            elif now - win.start_time >= 20.0:
+                                win.reset()
+                                
                             cv.rectangle(frame, (x1,y1), (x2,y2), (0, 255, 0), 2)
-
+                            cv.putText(frame, f"{lid}",
+                                    (x1, y1-1), cv.FONT_HERSHEY_DUPLEX,
+                                    0.5, (0,0,255), 2)
                     else:
                         # === Không có người ===
                         attempt_no_person += 1
-                        if attempt_no_person >= 60:       # Assume FPS is 20
+                        attempt_person = 0
+                        if attempt_no_person >= HUMAN_OFF_THRESHOLD and person_counter == 0:       # Assume FPS is 20
                             if is_offline:
                                 attempt_no_person = 0  # reset counter
                             else:
-                                print("[INFO] No human detected after 3 seconds — Turning LED OFF.")
+                                print("[INFO] Nobody in room. Turning LED OFF")
                                 client.publish(TOPIC_LED, '{"status":0}', qos=1)
                                 is_offline = True
                                 attempt_no_person = 0  # reset counter
+
+                    cv.putText(frame, f"PC: {person_counter}",
+                                    (0, 10), cv.FONT_HERSHEY_DUPLEX,
+                                    0.5, (0,0,0), 2)
+                    to_remove = []
+                    for lid, info in logical_tracks.items():
+                        if now - info["last_time"] > MAX_LID_TRACK_T:
+                            to_remove.append(lid)
+
+                    for removed_lid in to_remove:
+                        logical_tracks.pop(removed_lid, None)
+                        for tid, lid in list(tracker_to_logical.items()):
+                            if lid == removed_lid:
+                                tracker_to_logical.pop(tid, None)
+                        size_windows.pop(removed_lid, None)
 
                     _, buffer = cv.imencode('.jpg', frame)
                     yield (b'--frame\r\n'

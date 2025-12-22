@@ -1,5 +1,6 @@
 import torch
 import os
+import csv
 
 def train_one_epoch(classifier, extractor, loader, criterion, optimizer, device):
     classifier.train()
@@ -63,20 +64,32 @@ def train(
     device = "cpu",
     # log_freq = 2
 ):
+
     full_model_path = os.path.join(args.classifier_path, args.classifier_name)
-    best_val_acc = 0
+    csv_log_path = os.path.join(args.classifier_path, "osnetibn_x1_0_log.csv")
+
+    best_acc = 0
+
+    with open(csv_log_path, mode="w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["epoch", "train_acc", "val_acc"])
+
     # Training loop
     for epoch in range(1, args.epochs + 1):
         train_loss, train_acc = train_one_epoch(classifier, extractor, train_loader,
                                criterion, optimizer, device)
         val_acc = eval(classifier, extractor, val_loader, device)
 
+        with open(csv_log_path, mode="a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([epoch, train_acc, val_acc])
+
         if epoch % args.log_freq == 0:
             print(f"[Epoch {epoch}] Loss: {train_loss:.4f} |  Train Acc: {train_acc:.4f}  |  Val Acc: {val_acc:.4f}")
 
-        if best_val_acc < val_acc :
+        if best_acc < val_acc :
             # Save best classifier
             torch.save(classifier.state_dict(), full_model_path)
             print("Saved best classifier to:", full_model_path)
-            best_val_acc = val_acc
+            best_acc = val_acc
 

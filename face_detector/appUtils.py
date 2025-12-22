@@ -6,13 +6,19 @@ import numpy as np
 import torch
 import torch.serialization
 from torchreid.reid.utils import FeatureExtractor
+from torchreid.reid.models import build_model
 from model_manual.ReID.utils import Classifier
 from tracker import TrackerManager
 from ultralytics import YOLO
 import queue
+from tracker import iou_xyxy
+from torchvision import transforms
+import torch.nn.functional as F
+import re
 
 # ESP32_STREAM_URL = "http://10.54.117.194/stream"
 ESP32_STREAM_URL = "http://10.197.209.194/stream"
+# ESP32_STREAM_URL = "http://192.168.100.251/stream"
 
 
 cap_lock = threading.Lock()
@@ -59,7 +65,7 @@ def init_full_engine(nc,
                 reid_pretrained_path, 
                 yolo_path, 
                 iou_threshold=0.3, 
-                max_age=10):
+                max_age=1):
     
     torch.serialization.add_safe_globals([np.dtype, np.core.multiarray.scalar])
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -118,7 +124,61 @@ def init_full_engine(nc,
 
     return extractor, classifier, yolo_model, tracker_manager, device, flags
 
-def init_nonid_engine(yolo_path, iou_threshold=0.3, max_age=10):
+# def init_full_engine(nc, 
+#                 reid_model_name, 
+#                 reid_pretrained_path, 
+#                 yolo_path, 
+#                 iou_threshold=0.3, 
+#                 max_age=1):
+    
+#     device = "cuda" if torch.cuda.is_available() else "cpu"
+
+#     flags = {}
+
+#     try:
+#         reid_model = build_model(
+#             name=reid_model_name,
+#             num_classes=nc,
+#             pretrained=False
+#         )
+#         state_dict = torch.load(reid_pretrained_path, map_location='cpu')
+#         reid_model.load_state_dict(state_dict)
+#         reid_model.eval()
+#         reid_model.to(device)
+#         flags["extractor_flag"] = 1
+#         push_log("ReID extractor loaded OK")
+#         print("[OK] ReID extractor loaded.")
+#     except Exception as e:
+#         flags["extractor_flag"] = 0
+#         push_log(f"[ERROR] Cannot load ReID extractor: {e}")
+#         print("[ERROR] Cannot load ReID extractor:", e)
+#         reid_model = None
+
+#     try:
+#         yolo_model = YOLO(yolo_path)
+#         flags["detector_flag"] = 1
+#         push_log("YOLO Detector loaded OK")
+#         print("[OK] YOLO Detector loaded.")
+#     except Exception as e:
+#         flags["detector_flag"] = 0
+#         push_log(f"[ERROR] Cannot load YOLO model: {e}")
+#         print("[ERROR] Cannot load YOLO model:", e)
+#         yolo_model = None
+
+#     try:
+#         tracker_manager = TrackerManager(iou_threshold, max_age)
+#         flags["tracker_flag"] = 1
+#         push_log("Tracker manager loaded OK")
+#         print("[OK] Tracker manager loaded.")
+#     except Exception as e:
+#         flags["tracker_flag"] = 0
+#         push_log(f"[ERROR] Cannot load tracker: {e}")
+#         print("[ERROR] Cannot load tracker:", e)
+#         tracker_manager = None
+
+#     return reid_model, yolo_model, tracker_manager, device, flags
+
+def init_nonid_engine(yolo_path, iou_threshold=0.3, max_age=1):
 
     flags = {}
 
@@ -161,3 +221,92 @@ def predict_batch(bboxs, extractor, classifier, device):
     confidences = probs.max(dim=1).values.cpu().tolist()
 
     return classes, confidences
+
+# def build_transform():
+#     return transforms.Compose([
+#         transforms.ToTensor(),
+#     ])
+
+# def predict_batch(bboxs, extractor, gallery, device):
+
+#     transform = build_transform()
+#     with torch.no_grad():
+#         imgs = torch.stack([
+#             transform(img) for img in bboxs
+#         ]).to(device)
+
+#         feats = extractor(imgs)      # (N, 512)
+#         feats = feats.to(device).float()
+#         feats = F.normalize(feats, dim=1)
+
+#         gal_feats = gallery["features"].to(device)
+#         gal_labels = gallery["labels"]
+
+#         dist = torch.cdist(feats, gal_feats, p=2)
+#         min_dist, min_idx = dist.min(dim=1)
+
+#         classes = [gal_labels[i] for i in min_idx.cpu().tolist()]
+
+#         # lấy độ tin cậy mỗi row
+#         confidences = (1.0 / (1.0 + min_dist)).cpu().tolist()
+
+#     return classes, confidences
+
+class TrendWindow:
+    def __init__(self):
+        self.start_time = None
+        self.cx = []
+        # self.areas = []
+
+    def reset(self):
+        self.start_time = None
+        self.cx.clear()
+        # self.areas.clear()
+
+# def analyze_trend(values, min_samples=10):
+#     if len(values) < min_samples:
+#         return "UNKNOWN"
+
+#     inc = dec = total = 0
+#     for i in range(1, len(values)):
+#         diff = values[i] - values[i-1]
+#         if diff > 10:
+#             inc += 1
+#         if diff < -10:
+#             dec += 1
+
+#     total = inc + dec
+#     print(total)
+#     print(inc)
+#     print(dec)
+
+#     if inc / total >= 0.6:
+#         return "IN"
+#     if dec / total >= 0.6:
+#         return "OUT"
+#     return "UNKNOWN"
+
+def analyze_trend(cx):
+    if len(cx) < 10:
+        return "UNKNOWN"
+    
+    displacement = cx[-1] - cx[0]
+
+    if abs(displacement) > 200:
+        return "IN" if displacement > 0 else "OUT"
+
+    return "UNKNOWN"
+
+
+def same_person(boxA, boxB, time_gap): 
+    if time_gap > 0.5: 
+        return False 
+    if iou_xyxy(boxA, boxB) < 0.5: 
+        return False 
+    wA, hA = boxA[2]-boxA[0], boxA[3]-boxA[1] 
+    wB, hB = boxB[2]-boxB[0], boxB[3]-boxB[1] 
+    if abs(wA - wB) / wA > 0.2: 
+        return False 
+    if abs(hA - hB) / hA > 0.2: 
+        return False 
+    return True

@@ -13,15 +13,13 @@ from torch.utils.data import Dataset
 class Classifier(nn.Module):
     def __init__(self, num_class):
         super().__init__()
-        self.num_class = num_class
         self.fc = nn.Sequential(
-            nn.Linear(512, 128),
-            nn.ReLU(),
-            nn.Linear(128, num_class)         
+            nn.Linear(512, num_class)
         )
 
     def forward(self, x):
-        return self.fc(x)
+        logits = self.fc(x)
+        return logits
 
 class ReIDDataset(Dataset):
     def __init__(self, img_paths):
@@ -44,25 +42,7 @@ def augment_images(img, count):
 
     for i in range(count):
         aug = iaa.Sequential([])
-
-        rand_number = np.random.randint(0, 101)
-        if rand_number < 70:
-            aug.append(iaa.AverageBlur(k=(3, 3)))
-
-        rand_number = np.random.randint(0, 101)
-        if rand_number < 30:
-            aug.append(iaa.Multiply((0.7, 1.2)))           
-            
-        rand_number = np.random.randint(0, 101)
-        if rand_number < 33:
-            aug.append(iaa.ChangeColorTemperature((1100, 10000)))
-        elif rand_number < 66:
-            aug.append(iaa.MultiplyHueAndSaturation((0.5, 1.5), per_channel=True))           
-                  
-        rand_number = np.random.randint(0, 101)
-        if rand_number < 33:
-            aug.append(iaa.CoarseDropout(0.015, size_percent=0.1, per_channel=0.5))
-            
+          
         rand_number = np.random.randint(0, 101)
         if rand_number < 50:
             aug.append(iaa.pillike.FilterEdgeEnhanceMore())
@@ -78,9 +58,9 @@ def augment_images(img, count):
 def create_data(args):
     yolo_model = YOLO(args.yolo_path)
     # Tạo folder ReID chuẩn
-    train_dir = os.path.join(args.save_path, "train")
-    validation_dir = os.path.join(args.save_path, "valid")
-    test_dir = os.path.join(args.save_path, "test")
+    train_dir = os.path.join(args.save_path, "train_temp")
+    validation_dir = os.path.join(args.save_path, "valid_temp")
+    test_dir = os.path.join(args.save_path, "test_temp")
 
     os.makedirs(train_dir, exist_ok=True)
     os.makedirs(validation_dir, exist_ok=True)
